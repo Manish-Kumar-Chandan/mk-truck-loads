@@ -1,0 +1,168 @@
+<% include ../../Partials/HeaderRoot  %>
+<% include ../../Partials/Header %>
+
+
+
+<div class="wrapper ">
+    <% include ../loder %>
+    <div class="container pt-2 pb-2">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="highlight"><span class="category"></span> - Get A Quote</h2>
+            </div>
+            <div class="col-md-6">
+                <form id="quote-form" enctype="multipart/form-data">
+                    <h2>Details</h2>
+                    <hr>
+                    <div class="form-group mb-1">
+                        <label for="title">Job Title:</label>
+                        <input type="text" class="form-control" placeholder="Title" name="title"
+                            id="title"  required>
+                    </div>
+                    <div class="form-group mb-1">
+                        <label for="collection">Collection:</label>
+                        <input type="text" class="form-control collection" placeholder="Collection Suburb" name="collection"
+                            id="pickup-auto-complete"  required>
+                    </div>
+                    <div class="form-group mb-1">
+                        <label for="deliver">Deliver:</label>
+                        <input type="text" class="form-control deliver" placeholder="Deliver Suburb" name="deliver"
+                            id="delivery-auto-complete" required>
+                    </div>
+                    <!-- <div class="form-group mb-1">
+                        <label for="carrier">Carrier:</label>
+                        <select id="carrier" class="form-control" name="carrier">
+                            <option selected="selected" value="0">All</option>
+                            <option value="1">Peterbilt</option>
+                            <option value="1">Scania</option>
+                            <option value="1">volvo</option>
+                        </select>
+                    </div> -->
+                    <div class="form-group mb-1">
+                        <label for="availibility">Availibility:</label>
+                        <select id="availibility" class="form-control" name="availibility" required> 
+                            <option selected="selected" value="ASAP">ASAP</option>
+                            <option value="READY NOW">Ready Now</option>
+                            <option value="AVAILABLE FROM">Available From</option>
+                            <option value="PLANNING">Planning &amp; Budgeting</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-1 date">
+                        <label for="date">Date and time</label>
+                        <input class="form-control" type="date"  name="date" id="date" >
+                    </div>
+
+
+                    <% if (category === 'cars') {  %>
+                    <% include ./dummy %>
+                    <%} else if (category === 'bike') {%>
+                    <% include ./dummy %>
+                    <%} else if (category === 'furniture') { %>
+                    <% include ./dummy %>
+                    <%} else if (category === 'boat') {%>
+                    <% include ./dummy %>
+                    <%} else if (category === 'home') {%>
+                    <% include ./dummy %>
+                    <% } else if (category === 'pallets') {%>
+                    <% include ./dummy %>
+                    <% } else if (category === 'waste') { %>
+                    <% include ./dummy %>
+                    <% } else if (category === 'trucks') {%>
+                    <% include ./dummy %>
+                    <% } else if (category === 'other-vehicle') {%>
+                    <% include ./dummy %>
+                    <% } else if (category === 'container') { %>
+                    <% include ./dummy %>
+                    <% } else if (category === 'houlage') {%>
+                    <% include ./dummy %>
+                    <% } else if (category === 'livestock') {%>
+                    <% include ./dummy %>
+                    <% } else if (category === 'heavy') {%>
+                    <% include ./dummy %>
+                    <% } else if (category === 'agriculture') {%>
+                    <% include ./dummy %>
+                    <% } else if (category === 'mining-machine') {%>
+                    <% include ./dummy %>
+                    <% } else if (category === 'refrigrated') {%>
+                    <% include ./dummy %>
+                    <% } else if (category === 'automotive') {%>
+                    <% include ./dummy %>
+                    <% } else if (category === 'warehouse') {%>
+                    <% include ./dummy %>
+                    <% } else {%>
+                    <div class="not-in-list">
+                        <h2>Something Went Wrong!</h2>
+                        <p>This category is not in our List please choose different one.</p>
+                    </div>
+                    <% } %>
+
+                    <div class="form-group mb-1">
+                        <label for="description">Description:</label>
+                        <textarea class="form-control" placeholder="Desscription" name="description"
+                            id="description" required></textarea>
+                    </div>
+
+                    <div class="form-group mt-1 mb-1 preview-container">
+                        <img src="" id="preview" class="h-100 w-100">
+                    </div>
+
+                    <div class="custom-file mb-1 mt-3">
+                        <input type="file" class="custom-file-input" name="file" id="file" required>
+                        <label class="custom-file-label" for="File">Upload Photo</label>
+                    </div>
+
+                    <div class="form-group mb-1 ">
+                        <label for="budget">Budget</label>
+                        <input class="form-control" type="number" name="budget" min="0" placeholder="0" step="5"
+                            id="budget" required>
+                    </div>
+
+                    <div class="form-group mt-3 mb-5">
+                        <button class="btn btn-primary text-dark submit" type="submit">Get a Quote</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+
+                <div class="shadow p-2">
+                    <h2 class="bg-primary p-2 rounded shadow mb-4">
+                        Receive quotes for transport services by posting your request below.
+                    </h2>
+    
+                    <span class="bg-dark text-primaay p-2 rounded mt-5 ">It is easy as:</span>
+                    <span class="bg-dark text-primaay p-2 rounded mt-5">Phone +61 3 9465 2127</span>
+                    <span class="bg-dark text-primaay p-2 rounded mt-5">OR</span>
+                    <span class="bg-dark text-primaay p-2 rounded mt-5">Fill Form</span>
+    
+                    <div class="mt-4 bg-primary p-2 rounded shadow">
+                        <p>
+                            Once your quote request has been posted, it's then added to the Load Board and alerted to the
+                            Truck Loads community.
+                            Those carriers that may be of assistance will respond directly to you with quotation (varying
+                            price & availability).
+                        </p>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-12 image-container">
+                            <img src="/public/assets/images/categories/<%= category %>.svg" class="h-100 w-100">
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../../Partials/FooterLink  %>
+<% include ../../Partials/Footer %>
+<% include ../../Partials/FooterRoot  %>
+
+<link rel="stylesheet" href="/public/assets/css/get-a-quote/get-a-quote.css">
+<script>
+    var page = "<%= category %>";
+    $('.category').text(page.toUpperCase());
+</script>
+<script src="/public/assets/js/get-a-quote.js"></script>
+<script src="/public/assets/js/auto-complete.js"></script>
+

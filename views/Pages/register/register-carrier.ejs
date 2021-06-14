@@ -1,0 +1,48 @@
+<% include ../../Partials/HeaderRoot  %>
+<% include ../../Partials/Header %>
+
+<div class="wrapper-signup-page">
+    <% include ../loder %>
+    <div class="card  account-card mx-3 border shadow-lg">
+        <div class="bg-primary p-4 text-white text-center position-relative">
+            <h4 class="font-20 text-dark m-b-5">Register as Carrier!</h4>
+            <p class="text-dark mb-4">Sign up to continue to Truck Loads.</p>
+            <a class="logo logo-admin"><img src="/public/assets/images/logo-sm.svg" height="26" alt="logo"></a>
+        </div>
+        <div class="mt-5 p-3">
+                <!-- progressbar -->
+                <ul id="progressbar">
+                    <li class="<%= page === 'Profile' ? 'active' : '' %>">Profile</li>
+                    <li class="<%= page === 'Fleet' ? 'active' : '' %>">Fleet</li>
+                    <li class="<%= page === 'Alerts' ? 'active' : '' %>">Alerts</li>
+                    <li class="<%= page === 'Subscribe' ? 'active' : '' %>">Subscribe</li>
+                </ul>
+                <!-- fieldsets -->
+
+                <% if (page === 'Profile') { %>
+                    <% include ../../Forms/profile %>
+                <% } else if (page === 'Fleet') {%>
+                    <% include ../../Forms/fleet %>
+                <% } else if (page === 'Alerts') {%>
+                    <% include ../../Forms/alerts %>
+                <% } else if (page === 'Subscribe') {%>
+                    <% include ../../Forms/subscribe %>
+                    <script src="/public/assets/js/register/register-subscribe.js"></script>
+                <% } %>
+        </div>
+    </div>
+</div>
+
+
+<link rel="stylesheet" href="/public/assets/css/register-carrier.css">
+<script src="/public/assets/js/register/register-profile.js"></script>
+<script src="/public/assets/js/register/register-fleet.js"></script>
+<script src="/public/assets/js/register/register-alerts.js"></script>
+
+
+<% include ../../Partials/FooterLink  %>
+<% include ../../Partials/Footer  %>
+
+<% include ../../Partials/FooterRoot  %>
+
+

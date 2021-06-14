@@ -1,0 +1,25 @@
+<% include ../Partials/HeaderRoot  %>
+<% include ../Partials/Header %>
+
+    <div class="wrapper-page">
+        <% include ./loder %>
+
+        <div class="card overflow-hidden account-card mx-3">
+            <div class="bg-primary p-4 text-white text-center position-relative">
+                <h4 class="font-20 text-dark m-b-5">Feedback</h4>
+                <p class="text-dark mb-4">Your Feedback is valuable for us.</p>
+                <a class="logo logo-admin"><img src="/public/assets/images/logo-sm.svg" height="26" alt="logo"></a>
+            </div>
+            <div class="account-card-content"> 
+                <% include ../Forms/feedback %>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- end wrapper-page -->
+
+    <% include ../Partials/FooterLink  %>
+
+<% include ../Partials/Footer  %>
+<% include ../Partials/FooterRoot  %>

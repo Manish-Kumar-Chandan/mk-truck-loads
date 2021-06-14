@@ -1,0 +1,309 @@
+<% include ../Partials/HeaderRoot  %>
+<% include ../Partials/Header %>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClAnc__rQnEoH75Zs2sbWKj06tAYlSQus" defer></script>
+
+<div class="wrapper ">
+    <% include ./loder %>
+
+    <% include ./alert %>
+
+    <script>
+        const role = '<%= user.role %>';
+    </script>
+
+    <div id="mySidenav" class="sidenav ">
+        <a class="closebtn" onclick="closeNav()">&times;</a>
+
+    </div>
+
+    <div id="main">
+
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header text-dark bg-primary">
+                        <h4 class="modal-title">Bid Here</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form id="bid-form">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="Bid">Bid:</label>
+                                        <input class="form-control" type="number" name="bid" id="bid" min="0" required>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="time">Time:</label>
+                                        <input class="form-control" type="date" id="time" min="" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="proposal">Proposal:</label>
+                                        <textarea id="proposal" name="proposal" rows="4"
+                                            class="form-control" required></textarea>
+
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <button type="submit" class="btn btn-primary">Bid</button>
+
+                        </form>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="filterModal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header text-dark bg-primary">
+                        <h4 class="modal-title">Filters</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h4>Customer</h4>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="business"
+                                                    name="business">
+                                                <label class="custom-control-label" for="business">Business Only</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input"
+                                                    id="business_induvidual" name="business_induvidual">
+                                                <label class="custom-control-label" for="business_induvidual">Business
+                                                    and Induvidual Only</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="induvidual"
+                                                    name="induvidual">
+                                                <label class="custom-control-label" for="induvidual">Induvidual
+                                                    Only</label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h4>Categories</h4>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="cars"
+                                                    name="cars">
+                                                <label class="custom-control-label" for="cars">Cars</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="bike"
+                                                    name="bike">
+                                                <label class="custom-control-label" for="bike">Bike</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="furniture"
+                                                    name="furniture">
+                                                <label class="custom-control-label" for="furniture">Furniture</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="boat"
+                                                    name="boat">
+                                                <label class="custom-control-label" for="boat">Boat</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="home"
+                                                    name="home">
+                                                <label class="custom-control-label" for="home">Home</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="pallets"
+                                                    name="pallets">
+                                                <label class="custom-control-label" for="pallets">Pallets</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="waste"
+                                                    name="waste">
+                                                <label class="custom-control-label" for="waste">Waste</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="truck"
+                                                    name="truck">
+                                                <label class="custom-control-label" for="truck">Truck</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="other-vehicle"
+                                                    name="other-vehicle">
+                                                <label class="custom-control-label" for="other-vehicle">Other Vehicles</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="container"
+                                                    name="container">
+                                                <label class="custom-control-label" for="container">Container</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="houlage"
+                                                    name="houlage">
+                                                <label class="custom-control-label" for="houlage">Houlage</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="livestock"
+                                                    name="livestock">
+                                                <label class="custom-control-label" for="livestock">Livestock</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="heavy"
+                                                    name="heavy">
+                                                <label class="custom-control-label" for="heavy">Heavy</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="agriculture"
+                                                    name="agriculture">
+                                                <label class="custom-control-label" for="agriculture">Agriculture</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="machine"
+                                                    name="machine">
+                                                <label class="custom-control-label" for="machine">Machine</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="automotive"
+                                                    name="automotive">
+                                                <label class="custom-control-label" for="automotive">Automotive</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="refrigrated"
+                                                    name="refrigrated">
+                                                <label class="custom-control-label" for="refrigrated">Refrigrated</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="warehouse"
+                                                    name="warehouse">
+                                                <label class="custom-control-label" for="warehouse">Warehouse</label>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Apply</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="clearfix bg-dark rounded">
+            <div class="float-left">
+                <span style="font-size:30px;cursor:pointer;" data-toggle="modal"
+                    data-target="#filterModal">&#9776;</span>
+            </div>
+            <div class="float-right p-2">
+                <form>
+                    <div class="form-group">
+                        <select class="form-control bg-dark text-primary" id="sel1" name="sellist1">
+                            <option disabled>Sort</option>
+                            <option>Recent Date</option>
+                            <option>Expiry Soonest</option>
+                            <option>Quote (Most)</option>
+                            <option>Quote (Least)</option>
+                            <option>Distance (Greatest)</option>
+                            <option>Distance (Least)</option>
+                        </select>
+                        <br>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="accordion">
+
+            
+        </div>
+    </div>
+</div>
+
+<% include ../Partials/FooterLink  %>
+<% include ../Partials/Footer %>
+<% include ../Partials/FooterRoot  %>
+
+<link rel="stylesheet" href="/public/assets/css/jobs.css">
+
+<script src="/public/assets/js/jobs.js"></script>
+<script src="/public/assets/js/sidebar.js"></script>
+
+
+<style>
+    .collapse:not(.show) {
+        height: 0px !important;
+        display: block !important;
+        overflow: hidden;
+    }
+</style>

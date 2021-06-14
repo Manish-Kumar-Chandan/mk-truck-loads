@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="215" height="231" viewBox="0 0 215 231">
+  <g id="Group_5" data-name="Group 5" transform="translate(-152.5 -507.5)">
+    <g id="delivery-truck_1_" data-name="delivery-truck (1)" transform="translate(224 456.82)">
+      <g id="Group_3" data-name="Group 3" transform="translate(0 67.064)">
+        <g id="Group_2" data-name="Group 2" transform="translate(0 0)">
+          <path id="Path_4" data-name="Path 4" d="M0,244.668a1.959,1.959,0,0,0,1.962,2.059H5.1a13.877,13.877,0,0,1,12.464-8.158,13.878,13.878,0,0,1,12.464,8.158H70.751V230.064H0Z" transform="translate(0 -185.537)" fill="#F7DC5F"/>
+          <path id="Path_5" data-name="Path 5" d="M39.708,277.32a9.236,9.236,0,1,0,9.236,9.236A9.236,9.236,0,0,0,39.708,277.32Z" transform="translate(-22.148 -219.884)" fill="#F7DC5F"/>
+          <path id="Path_6" data-name="Path 6" d="M311.222,194.93l-8.8-3.866H275v27.317h5.324a13.6,13.6,0,0,1,24.928,0h5.21a1.959,1.959,0,0,0,1.962-2.059v-19.4A2.124,2.124,0,0,0,311.222,194.93Z" transform="translate(-199.878 -157.191)" fill="#F7DC5F"/>
+          <path id="Path_7" data-name="Path 7" d="M293.383,124.434a6.274,6.274,0,0,0-5.663-3.372H275v14.751h24.289Z" transform="translate(-199.878 -106.311)" fill="#F7DC5F"/>
+          <path id="Path_8" data-name="Path 8" d="M64.478,67.064H6.24A6.3,6.3,0,0,0,0,73.468V107.22H70.751V73.468c0-.01,0-.02,0-.029A6.325,6.325,0,0,0,64.478,67.064Z" transform="translate(0 -67.064)" fill="#F7DC5F"/>
+          <path id="Path_9" data-name="Path 9" d="M315.541,277.32a9.236,9.236,0,1,0,9.236,9.236h0A9.236,9.236,0,0,0,315.541,277.32Z" transform="translate(-222.632 -219.884)" fill="#F7DC5F"/>
+        </g>
+      </g>
+    </g>
+    <g id="search_1_" data-name="search (1)" transform="translate(163 508.997)">
+      <g id="Group_4" data-name="Group 4" transform="translate(0 0.003)">
+        <path id="Path_11" data-name="Path 11" d="M151.144,142.132,107.631,98.619a60.682,60.682,0,1,0-9.015,9.015l43.513,43.513a6.374,6.374,0,1,0,9.015-9.015ZM60.567,108.387A47.816,47.816,0,1,1,108.384,60.57,47.866,47.866,0,0,1,60.567,108.387Z" transform="translate(0 -0.003)" fill="#F7DC5F" stroke="#fff" stroke-width="3"/>
+      </g>
+    </g>
+    <text id="Find_Transport_Loads_Fast" data-name="Find Transport
+  &amp; Loads Fast" transform="translate(153.5 688.5)" fill="#F7DC5F" stroke="#F7DC5F" stroke-width="1" font-size="31" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="0" y="0">Find Transport</tspan><tspan x="0" y="41" xml:space="preserve">  </tspan><tspan y="41" font-family="SegoeUI, Segoe UI" font-weight="400">&amp; Loads Fast</tspan></text>
+  </g>
+</svg>

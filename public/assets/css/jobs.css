@@ -1,0 +1,71 @@
+.sidenav {
+    height: 94%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 4em;
+    left: 0;
+    background-color: #03060D;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+
+  .sidenav a {
+    color: #F7DC5F !important; 
+  }
+  
+  .h-12 {
+    height: 12em;
+  }
+
+  .sidenav a:hover {
+    color: #f1f1f1 !important; 
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  
+
+  #main {
+    transition: margin-left .5s;
+    padding: 1em 8em;
+  }
+  
+  .select , .closebtn {
+    cursor: pointer !important;
+  }
+
+  .fa-user {
+    background-color: #F7DC5F;
+  }
+
+  #filterModal .modal-dialog {
+    max-width: 80% !important;
+  }
+
+  @media screen and (max-height: 450px) {
+
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+   
+
+    
+  }
+
+  @media screen and (max-width: 768px) {
+      #main {
+          padding: 1em;
+      }
+
+      #filterModal .modal-dialog {
+        max-width: 100% !important;
+      }
+  }

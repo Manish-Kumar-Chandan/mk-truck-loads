@@ -1,0 +1,45 @@
+<% include ../../Partials/HeaderRoot  %>
+<% include ../../Partials/Header %>
+
+<div class="wrapper-signup-page">
+    <% include ../loder %>
+    <div class="card  account-card mx-3 border shadow-lg">
+        <div class="bg-primary p-4 text-white text-center position-relative">
+            <h4 class="font-20 text-dark m-b-5">Register as Shipper!</h4>
+            <p class="text-dark mb-4">Sign up to continue to Truck Loads.</p>
+            <a class="logo logo-admin"><img src="/public/assets/images/logo-sm.svg" height="26" alt="logo"></a>
+        </div>
+        <div class="mt-5">
+            
+
+            <form id="signup-form" >
+                <fieldset class="p-3">
+                    <% include ../../Forms/shipper %>
+                    <div class="row">
+    
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="form-check-label ml-3 mt-2">
+                                    <input type="checkbox" class="" class="form-check-input" value="" name="terms_and_cond" required> I agree that
+                                    Truck Loads is not responsible for the actions of any Buyer(Shipper) OR Seller(Carrier)
+                                    participating
+                                    on this site.
+                                </label>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </fieldset>
+                <button type="submit" class="btn btn-primary text-dark ml-3 mb-3 signup-button">Sign up</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<% include ../../Partials/FooterLink  %>
+<% include ../../Partials/Footer  %>
+
+<% include ../../Partials/FooterRoot  %>
+
+<link rel="stylesheet" href="/public/assets/css/register-carrier.css">
+<script src="/public/assets/js/shipperSignup.js"></script>

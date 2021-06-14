@@ -1,0 +1,24 @@
+td.details-control {
+    background: url('/public/assets/icons/details_open.png') no-repeat center center;
+    cursor: pointer;
+}
+tr.shown td.details-control {
+    background: url('/public/assets/icons/details_close.png') no-repeat center center;
+}
+tr {
+    height: 3.5em !important;
+}
+
+thead tr {
+    height: 0px !important;
+}
+
+.shipper-card {
+    height: 600px;
+    overflow: auto;
+}
+
+
+.shipment-graph {
+    height: 290px;
+}

@@ -1,0 +1,27 @@
+.pl-1-5 {
+    padding-left: .35rem !important;
+}
+
+.pr-1-5 {
+    padding-right: .35rem !important;
+}
+
+
+.modal-dialog {
+    max-width: 40%;
+}
+
+.table.dataTable tbody td{
+padding: 12px 10px !important;
+} 
+
+
+.table.dataTable tbody td, .table.dataTable thead th {
+    text-align: center;
+}
+
+@media screen and (max-width: 576px){
+    .modal-dialog {
+        max-width: 100%;
+    }
+}

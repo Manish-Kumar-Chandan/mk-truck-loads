@@ -1,0 +1,107 @@
+
+  <form id="carrier-profile-form">
+
+   <div class="row profile">
+        <div class="col-sm-6">
+            <div class="form-group row">
+                <label for="address" class="col-form-label small">Address</label>
+                <div class="col-lg-12">
+                    <input id="address" name="address" type="text" class="form-control form-control-sm" required placeholder="Address" value="<%= user ? user.address  : '' %>">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6"></div>
+        <div class="col-sm-6">
+            <div class="form-group row">
+                <label for="business_name" class="col-form-label small">Business Name</label>
+                <div class="col-lg-12">
+                    <input id="business_name" name="business_name" type="text" class="form-control form-control-sm" required placeholder="Business Name" value="<%= user ? user.business : '' %>">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group row">
+                <label for="username" class="col-form-label small">User Name</label>
+                <div class="col-lg-12">
+                    <input id="username" name="username" type="text" class="form-control form-control-sm" required placeholder="Business Name" value="<%= user ? user.business : '' %>">
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-md-6">
+            <div class="form-group row">
+                <label for="first_name" class="col-form-label small">First Name</label>
+                <div class="col-lg-12">
+                    <input id="first_name" name="first_name" type="text" class="form-control form-control-sm" required placeholder="First Name" value="<%= user ? user.firstName : '' %>">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group row">
+                <label for="last_name" class="col-form-label small">Last Name</label>
+                <div class="col-lg-12">
+                    <input id="last_name" name="last_name" type="text" class="form-control form-control-sm" required placeholder="Last Name" value="<%= user ? user.lastName : '' %>">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group row">
+                <label for="email" class="col-form-label small">Email</label>
+                <div class="col-lg-12">
+                    <input id="email" name="email" type="email" class="form-control form-control-sm" required placeholder="Email" value="<%= user ? user.email : '' %>" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" title="Invalid Email">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 " >
+            <% if (!user) { %>
+            <div class="row p-0 ">
+                <div class="col-md-6 p-0">
+                    <div class="form-group password-container">
+                        <label for="password" class="col-form-label small">Password</label>
+                        <div class="col-lg-12">
+                            <input id="password" name="password" type="password" class="form-control form-control-sm" placeholder="Password" minlength="8" pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%*]).{8,})" title="Atleast 1 Capital, 1 uppercase, 1 Lowercase and have 8 characters" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 p-0">
+                    <div class="form-group password-container">
+                        <label for="cpassword" class="col-form-label small">Confirm Password</label>
+                        <div class="col-lg-12">
+                            <input id="cpassword" name="cpassword" type="password" class="form-control form-control-sm" placeholder="Password" minlength="8" pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%*]).{8,})" title="Atleast 1 Capital, 1 uppercase, 1 Lowercase and have 8 characters" required>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <% } %>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group row">
+                <label for="phone" class="col-form-label small">Phone</label>
+                <div class="col-lg-12">
+                    <input id="phone" name="phone" type="text" class="form-control form-control-sm" minlength="10" maxlength="10" pattern="^[1-9]+[0-9]*$" title="Invalid Phone" value="<%= user ? user.phone : '' %>" required placeholder="Phone">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6"></div>
+        <div class="col-sm-6">
+            <div class="form-group row">
+                <label for="type" class="col-form-label small small"  >Carrier Type</label>
+                <div class="col-lg-12">
+                    <select name="type" class="custom-select" id="type" required>
+                        <option selected value="business">Business Only</option>
+                        <option value="Induvidual">Induvidual Only</option>
+                        <option value="business or induvidual">Business and Induvidual</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6"></div>
+        
+    </div>
+    
+    <button type="submit" name="next" class="btn btn-primary mt-3 mb-3 signup-button" value="button" >Submit</button>
+    <!-- <a type="button" href="/register-carrier/fleet" class="btn btn-primary mt-3 mb-3 " value="button" >Next</a> -->
+</form> 
+

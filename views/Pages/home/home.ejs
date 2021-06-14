@@ -1,0 +1,173 @@
+<% include ../../Partials/HeaderRoot  %>
+<% include ../../Partials/Header %>
+
+
+
+<div class="wrapper">
+    <% include ../loder %>
+    <% include ../alert %>
+   
+    <% include ./banner %>
+    <% include ./categories %>
+
+   
+    <div class="row">
+        <div class="col-md-6 bg-primary pt-5 pb-5 p-3  d-flex justify-content-center">
+            <div class="row h-100 pt-2 pb-2">
+                <div class="col-12 h-100 pt-5 pb-5">
+                    <h2 class="information"><img src="/public/assets/images/favicon.svg" height="40" width="40" class="truck-favicon">  Truck Loads </h2>
+                    <h3>A Place where Transport does Business.</43>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6  p-0 backround-truck ">
+
+            <img class="img-thumbanil w-100" height="400"
+                src="/public/assets/images/gallery/slide.jpg">
+        </div>
+    </div>
+
+
+    
+    <div class="row mt-3 mb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-2">
+                    <div class="card shadow detail">
+                        <div class="card-body">
+                            <div class="row text-center">
+                                <div class="col-12 highlight">
+                                    <span><i class="fas fa-shipping-fast icon"></i></span>
+                                    <span>Km Driven</span>
+                                </div>
+
+                                <div class="col-12">
+                                    <span class="card_value">182,105 Km</span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-2 ">
+                    <div class="card shadow detail">
+                        <div class="card-body">
+                            <div class="row text-center">
+                                <div class="col-12 highlight">
+                                    <span><i class="fa fa-user icon"></i></span>
+                                    <span>Experience</span>
+                                    </div>
+
+
+                                <div class="col-12">
+                                    <span class="card_value">10+ Years</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <div class="card shadow detail">
+                        <div class="card-body">
+                            <div class="row text-center">
+                                <div class="col-12 highlight">
+                                    <span><i class="fa fa-users icon"></i></span>
+                                    <span>Team</span>
+                                    </div>
+
+                                <div class="col-12">
+                                    <span></span>
+                                    <span class="card_value">100+ </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+           
+        </div>
+    </div>
+
+
+   
+
+    <% include ./core %>
+
+    <!-- Carousel Start -->
+    <div class="row ">
+        <div class="col-12">
+            <h3 style="text-align: center; font-size: 44px;">What Our Clients Says</h3>
+        </div>
+        <div id="owl-demo" class="owl-carousel owl-theme">
+            <div class="item">
+                <div class="row">
+                    <div class="col-12  text-center d-flex justify-content-center">
+                        <div class="outer-frame">
+                            <img class="image" src="/public/assets/images/gallery/avatar.png">
+                        </div>
+                    </div>
+                    <div class="col-12 mt-5  text-center">
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunting mollit
+                        anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                        laudantium.
+
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="row">
+                    <div class="col-12  text-center d-flex justify-content-center">
+                        <div class="outer-frame ">
+                            <img class="image" src="/public/assets/images/gallery/team-02.jpg">
+                        </div>
+                    </div>
+                    <div class="col-12 mt-5  text-center">
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunting mollit
+                        anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                        laudantium.
+
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="row">
+                    <div class="col-12  text-center d-flex justify-content-center">
+                        <div class="outer-frame ">
+                            <img class="image" src="/public/assets/images/gallery/team-04.jpg">
+                        </div>
+                    </div>
+                    <div class="col-12 mt-5  text-center">
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunting mollit
+                        anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                        laudantium.
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+</div>
+<% include ../../Partials/FooterLink  %>
+<% include ../../Partials/FooterRoot  %>
+<% include ../../Partials/Footer  %>
+
+<link rel="stylesheet" href="/public/assets/css/home/home.css">
+<link rel="stylesheet" href="/public/plugins/carousel/crousel.min.css">
+<script src="/public/plugins/carousel/carousel.js"></script>
+<script src="/public/assets/js/carousel.js"></script>
+<script>
+    jQuery(() => {
+        innerHeight = window.innerHeight;
+        $('.slider').css('height', innerHeight - 100+ 'px')
+    })
+</script>

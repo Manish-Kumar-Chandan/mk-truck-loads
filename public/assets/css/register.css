@@ -1,0 +1,13 @@
+
+
+.slider {   
+    background-image: url('../images/gallery/slider-5.jpg');
+    height: 40em;
+    background-size: cover;
+}
+
+.banner {
+    position: absolute;
+    bottom: 0;
+}
+

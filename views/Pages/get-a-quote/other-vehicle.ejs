@@ -1,0 +1,30 @@
+<% include ./category %>
+
+
+
+<div class="form-group mb-1 " >
+    <label for="make_model" >Make & Model</label> 
+    <input class="form-control" type="text"  name="make_model"  placeholder="Make & Model"  id="make_model">
+  </div>
+
+
+<div class="custom-control mb-2 mt-3 custom-switch">
+    <input type="checkbox" class="custom-control-input" id="registered">
+    <label class="custom-control-label" for="registered" name="registered">Is it Registered?</label>
+  </div>
+
+  
+ <div class="custom-control mb-2 mt-2 custom-switch">
+    <input type="checkbox" class="custom-control-input" id="registered_and_insured">
+    <label class="custom-control-label" for="registered_and_insured" name="registered_and_insured">Is it Registered and Insured?</label>
+  </div>
+
+  
+ <div class="custom-control mb-2 mt-2 custom-switch">
+    <input type="checkbox" class="custom-control-input" id="empty">
+    <label class="custom-control-label" for="empty" name="empty">Is it Empty?</label>
+  </div>
+
+
+
+<% include ./measure %>

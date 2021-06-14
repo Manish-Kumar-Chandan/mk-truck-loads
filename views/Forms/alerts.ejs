@@ -1,0 +1,38 @@
+
+<form id="carrier-alert-form">
+    <script>
+        var userId = "<%= userId %>"
+    </script>
+<div class="row alert">
+    <div class="col-12 mb-3">
+        <h3 class="text-center">Recieve Job Alerts</h3>
+    </div>
+    <div class="col-6">
+        <div class="card shadow">
+            <div class="card-body">
+                <h5>Mobile</h5>
+                <p>Recieve Job Alerts via message.</p>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="mobile-alert" >
+                    <label class="custom-control-label" for="mobile-alert" name="mobile_alert">Enable Alerts for Mobile</label>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="card shadow">
+            <div class="card-body">
+                <h5>Email</h5>
+                <p>Recieve Job Alerts via Email.</p>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="email-alert">
+                    <label class="custom-control-label" for="email-alert" name="email_alert">Enable Alerts for Email</label>
+                  </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <button type="submit" name="next" class="btn btn-primary mt-3 mb-3 alert-button" value="button" >Submit</button>
+
+</form>

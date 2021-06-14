@@ -1,0 +1,66 @@
+.form-conatiner {
+    border-radius: 5px;
+}
+
+.slider {
+    background-image: url('../../images/gallery/slider.jpg');
+    background-size: cover;
+}
+
+.moving-form {
+    width: 90%;
+    border-radius: 10px;
+    
+}
+
+.hookup_logo {
+    height: 30px;
+    border-radius: 50%;
+}
+
+.ui-menu .ui-menu-item {
+    font-size: smaller !important;
+}
+
+select {
+    border: #F7DC5F;
+}
+
+
+input::placeholder {
+    color: #F7DC5F !important;
+    font-weight: lighter;
+}
+
+select option {
+    background-color: black;
+}
+
+input, select {
+    background-color: transparent !important;
+    color: #F7DC5F !important;
+}   
+
+.get_quote {
+    width: 100%;
+}
+
+.get-a-quote {
+    width: 100%;
+}
+
+
+@media screen and (max-width: 600px) {
+    .form-conatiner {
+        padding: 0.5em;
+    }
+
+    .slider {
+        height:40em;
+    }
+
+    .get-a-quote {
+        width: 100px;
+    }
+    
+}

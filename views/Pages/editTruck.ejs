@@ -1,0 +1,42 @@
+<% include ../Partials/HeaderRoot  %>
+<% include ../Partials/Header %>
+
+<div class="ex-pages">
+    <div class="content-center">
+        <div class="content-desc-center">
+            <div class="container">
+
+               <h4>Edit the truck details</h4>
+               <form id="edit-truck-form" enctype="multipart/form-data">
+                <div class="form-group mt-1 mb-1 preview-container">
+                    <img src="<%= data.truckImage %>" id="preview" class="h-100 w-100">
+                </div> 
+                
+                <div class="col-12">
+                    <div class="col-sm-12">
+                        <label>Truck name</label>
+                        <input id="truckName1" name="truckName" type="text" value="<%= data.truckName %>"  class="form-control" placeholder="truck Name" required>
+                    </div>
+                    <div class="col-sm-12">
+                        <label>Truck Number </label>
+                        <input id="truckNumber1" name="truckNumber" type="text" value="<%= data.truckNumber %>"  class="form-control" placeholder="Truck Number" pattern="[a-z,A-Z,0-9]{6}" required>
+                    </div>
+                    <div class="custom-file mb-1 mt-3">
+                        <input type="file" class="custom-file-input" name="file" id="file" required>
+                        <label class="custom-file-label" for="File">Upload Photo</label>
+                    </div>
+                </div>
+                <div class="form-group mt-3 mb-5">
+                        <button class="btn btn-primary text-dark edit-truck-info" type="submit">Add Truck</button>  
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/public/assets/js/truck.js"></script>
+<% include ../Partials/FooterLink  %>
+<% include ../Partials/Footer  %>
+<% include ../Partials/FooterRoot  %>

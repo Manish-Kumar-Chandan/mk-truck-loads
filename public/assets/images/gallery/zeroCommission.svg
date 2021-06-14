@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="362" height="314.5" viewBox="0 0 362 314.5">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="362" height="314.5" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Repeat_Grid_1" data-name="Repeat Grid 1" clip-path="url(#clip-path)">
+    <g id="Group_1" data-name="Group 1" transform="translate(-95.5 -144)">
+      <g id="Rectangle_1" data-name="Rectangle 1" transform="translate(132 144)" fill="#F7DC5F" stroke="#F7DC5F" stroke-width="1">
+        <rect width="221" height="236" rx="20" stroke="none"/>
+        <rect x="0.5" y="0.5" width="220" height="235" rx="19.5" fill="none"/>
+      </g>
+      <g id="Path_1" data-name="Path 1" transform="translate(183.376 204.947)" fill="#fff">
+        <path d="M 121.7999420166016 117.5534210205078 L 0.5000017881393433 117.5534210205078 L 0.5000017881393433 0.5000028014183044 L 121.7999420166016 0.5000028014183044 L 121.7999420166016 117.5534210205078 Z" stroke="none"/>
+        <path d="M 1.000007629394531 0.9999923706054688 L 1.000007629394531 117.0534286499023 L 121.299934387207 117.0534286499023 L 121.299934387207 0.9999923706054688 L 1.000007629394531 0.9999923706054688 M 7.62939453125e-06 -7.62939453125e-06 L 122.299934387207 -7.62939453125e-06 L 122.299934387207 118.0534286499023 L 7.62939453125e-06 118.0534286499023 L 7.62939453125e-06 -7.62939453125e-06 Z" stroke="none" fill="#F7DC5F"/>
+      </g>
+      <line id="Line_1" data-name="Line 1" y1="123" x2="130" transform="translate(171.5 193.5)" fill="none" stroke="#F7DC5F" stroke-width="1"/>
+      <line id="Line_2" data-name="Line 2" y1="119" x2="130" transform="translate(185.5 213.5)" fill="none" stroke="#F7DC5F" stroke-width="1"/>
+      <path id="Path_2" data-name="Path 2" d="M159.5,330.091l157.683-148.33h14.38V200.4l-153.611,140.3H163.034Z" transform="translate(0 -2)" fill="#F7DC5F" stroke="#F7DC5F" stroke-width="1"/>
+      <path id="Path_3" data-name="Path 3" d="M384.821,345.621l49.956-91.293h11.1L393.7,345.621Z" transform="translate(-13.821 34)" fill="#F7DC5F" stroke="#F7DC5F" stroke-width="1"/>
+      <g id="Rectangle_2" data-name="Rectangle 2" transform="translate(369 294)" fill="#F7DC5F" stroke="#F7DC5F" stroke-width="1">
+        <rect width="31" height="29" rx="5" stroke="none"/>
+        <rect x="0.5" y="0.5" width="30" height="28" rx="4.5" fill="none"/>
+      </g>
+      <g id="Rectangle_4" data-name="Rectangle 4" transform="translate(402 343)" fill="#F7DC5F" stroke="#F7DC5F" stroke-width="1">
+        <rect width="31" height="29" rx="5" stroke="none"/>
+        <rect x="0.5" y="0.5" width="30" height="28" rx="4.5" fill="none"/>
+      </g>
+      <g id="Rectangle_3" data-name="Rectangle 3" transform="translate(376 300)" fill="#fff" stroke="#F7DC5F" stroke-width="1">
+        <rect width="17" height="17" stroke="none"/>
+        <rect x="0.5" y="0.5" width="16" height="16" fill="none"/>
+      </g>
+      <g id="Rectangle_5" data-name="Rectangle 5" transform="translate(409 349)" fill="#fff" stroke="#F7DC5F" stroke-width="1">
+        <rect width="17" height="17" stroke="none"/>
+        <rect x="0.5" y="0.5" width="16" height="16" fill="none"/>
+      </g>
+      <text id="No_Commission" data-name="No Commission" transform="translate(96.5 445.5)" fill="#F7DC5F" stroke="#F7DC5F" stroke-width="1" font-size="49" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">No </tspan><tspan y="0" font-family="SegoeUI-Bold, Segoe UI" font-weight="700">Commission</tspan></text>
+    </g>
+  </g>
+</svg>

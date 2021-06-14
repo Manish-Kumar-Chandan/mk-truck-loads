@@ -1,0 +1,107 @@
+.sidenav {
+    height: 94%;
+    width: 70px;
+    position: fixed;
+    top: 4em;
+    left: 0;
+    background-color: #03060D;
+    overflow-x: hidden;
+    padding-top: 35px;
+}
+
+#main {
+    padding: 1em !important;
+
+}
+
+.page {
+    font-size: 2em;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+
+#side-menu-small li a i{
+    font-size: 20px;
+}
+
+
+#side-menu li a i{
+    margin-right: 1em;
+}
+
+
+#side-menu li a {
+    display: block;
+    padding: 12px 0px;
+    font-size: 15.7px;
+    position: relative;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+#side-menu-small li {
+    margin-bottom: 25px;
+}
+
+.metismenu {
+    list-style: none;
+}
+
+.metismenu {
+    padding: 0px 25px;
+}
+
+.sidenav a {
+    color: #F7DC5F !important;
+}
+
+
+.sidenav a:hover {
+    color: #f1f1f1 !important;
+}
+
+/* .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+} */
+
+#main {
+    margin-left: 70px;
+    margin-top: -10px
+}
+
+.select,
+.closebtn {
+    cursor: pointer !important;
+}
+
+.table.dataTable tbody tr {
+    text-align: center;
+}
+
+.table.dataTable thead tr {
+    text-align: center;
+}
+
+
+
+@media screen and (max-height: 450px) {
+
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    #main {
+        padding: 0.2em;
+    }
+}

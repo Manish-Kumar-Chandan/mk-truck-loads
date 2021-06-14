@@ -1,0 +1,64 @@
+<% include ../Partials/HeaderRoot  %>
+<% include ../Partials/Header %>
+
+<!-- Begin page -->
+    <div class="ex-pages">
+        <div class="content-center">
+            <div class="content-desc-center">
+                <div class="container">
+                  <div>
+                    <button type="button" class="btn btn-info btn-lg">Invitation</button>
+                    <button type="button" class="btn btn-primary btn-lg"><a href="/all-cancellation">Cancellation</a>  </button>
+                   </div>
+                  <% if(data.length > 0) { %>
+                    
+                        
+                        <h2>All invitation send by shipper</h2>          
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th>Shipper name</th>
+                              <th>Type of Item </th>
+                              <th>Shipped Date</th>
+                              <th>Pickup Address </th>
+                              <th>Delivery Address</th>
+                              <th>Status</th>
+                            </tr>
+                          </thead>
+                          
+                            <% for(let i=0; i<= data.length-1; i++) { %>
+                              <tbody>
+                                <td><%= data[i].shipperId.username %></td>
+                                <td><%= data[i].item %></td>
+                                <td><%= data[i].shippedDate %></td>
+                                <td><%= data[i].pickupAddress %></td>
+                                <td><%= data[i].DeliveryAddress %></td>
+                                <% if(data[i].status == false) { %>
+                                 
+                                  <td><button class="btn btn-primary"><a href="/accept?id=<%= data[i].id %>">Accept</a></button>
+                                    <button class="btn btn-danger"><a href="/cancel?id=<%= data[i].id%>">Cancel</a></button></td>
+                                <% } else { %>
+                                  <td>Accept</td>
+                                   
+                                <% } %>
+                              </tbody>
+                            <% } %>
+                           
+                         
+                        </table>
+                      </div>
+
+                    <% } else { %>
+                     <h1>There no invitation send by shipper</h1>
+                    
+                  <% } %>
+                 
+                <!-- end container -->
+            </div>
+        </div>
+
+    </div>
+    <!-- end error page -->
+    <% include ../Partials/FooterLink  %>
+    <% include ../Partials/Footer  %>
+    <% include ../Partials/FooterRoot  %>

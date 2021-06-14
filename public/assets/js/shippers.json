@@ -1,0 +1,66 @@
+{
+	"data": [
+		{
+			"name": "Bryan",
+			"email": "Bryan@shipper.com",
+			"address": "western lake Sydney",
+			"phone": "9876543210",
+			"earning": "800$",
+			"shipments": [
+				{"Id": "1234544", "category": "Cars", "pickup": "sydney", "delivery": "Melbourne", "date": "26-06-20" ,  "price": "800$", "details": 45},
+				{"Id": "5412301", "category": "Heavy", "pickup": "sydney", "delivery": "Melbourne", "date": "26-06-20", "price": "800$" , "details": 45}	
+			],
+			"action": "<i class='fas fa-marker'  data-toggle='modal' data-target='#shipper-Modal'></i><i class='ml-2 fa fa-trash'></i>"	
+		},
+		{
+			"name": "Bryan",
+			"email": "Bryan@shipper.com",
+			"address": "western lake Sydney",
+			"phone": "9876543210",
+			"earning": "800$",
+			"shipments": [
+				{"Id": "1234544", "category": "Cars", "pickup": "sydney", "delivery": "Melbourne", "date": "26-06-20" ,  "price": "800$", "details": 45},
+				{"Id": "5412301", "category": "Heavy", "pickup": "sydney", "delivery": "Melbourne", "date": "26-06-20", "price": "800$" , "details": 45}	
+			],
+			"action": "<i class='fas fa-marker'  data-toggle='modal' data-target='#shipper-Modal'></i><i class='ml-2 fa fa-trash'></i>"	
+		},
+		{
+			"name": "Bryan",
+			"email": "Bryan@shipper.com",
+			"address": "western lake Sydney",
+			"phone": "9876543210",
+			"earning": "800$",
+			"shipments": [
+				{"Id": "1234544", "category": "Cars", "pickup": "sydney", "delivery": "Melbourne", "date": "26-06-20" ,  "price": "800$", "details": 45},
+				{"Id": "5412301", "category": "Heavy", "pickup": "sydney", "delivery": "Melbourne", "date": "26-06-20", "price": "800$" , "details": 45}	
+			],
+			"action": "<i class='fas fa-marker'  data-toggle='modal' data-target='#shipper-Modal'></i><i class='ml-2 fa fa-trash'></i>"	
+		},
+		{
+			"name": "Bryan",
+			"email": "Bryan@shipper.com",
+			"address": "western lake Sydney",
+			"phone": "9876543210",
+			"earning": "800$",
+			"shipments": [
+				{"Id": "1234544", "category": "Cars", "pickup": "sydney", "delivery": "Melbourne", "date": "26-06-20" ,  "price": "800$", "details": 45},
+				{"Id": "5412301", "category": "Heavy", "pickup": "sydney", "delivery": "Melbourne", "date": "26-06-20", "price": "800$" , "details": 45}	
+			],
+			"action": "<i class='fas fa-marker'  data-toggle='modal' data-target='#shipper-Modal'></i><i class='ml-2 fa fa-trash'></i>"	
+		},
+		{
+			"name": "Bryan",
+			"email": "Bryan@shipper.com",
+			"address": "western lake Sydney",
+			"phone": "9876543210",
+			"earning": "800$",
+			"shipments": [
+				{"Id": "1234544", "category": "Cars", "pickup": "sydney", "delivery": "Melbourne", "date": "26-06-20" ,  "price": "800$", "details": 45},
+				{"Id": "5412301", "category": "Heavy", "pickup": "sydney", "delivery": "Melbourne", "date": "26-06-20", "price": "800$" , "details": 45}	
+			],
+			"action": "<i class='fas fa-marker'  data-toggle='modal' data-target='#shipper-Modal'></i><i class='ml-2 fa fa-trash'></i>"	
+		}
+		
+		
+	]
+}

@@ -1,0 +1,140 @@
+
+
+
+.pl-10 {
+    padding-left: 8em;
+}
+
+
+
+.card_value {
+    font-size: 1.8em;
+
+}
+
+
+
+.truck-image {
+    max-height: 50px;
+    width: 100%;
+}
+
+#owl-demo .item img{
+    height: 120px;
+    width: 120px;
+    margin: -15px -15px;
+    transform: rotate(-45deg);
+}
+
+.outer-frame {
+    border-radius: 20px;
+    width: 90px;
+    height: 90px;
+    transform: rotate(45deg);
+    overflow: hidden;
+}
+
+.p-10 {
+    padding: 3px 15em;
+}
+
+.detail:hover {
+    transition: transform 0.5s;
+    transform: scale(1.06,1.05);
+}
+
+.item {
+    padding: 3em ;
+}
+
+/* .item:hover .outer-frame {
+    transition: transform 0.5s;
+    transform: rotate(0deg)
+}
+
+
+ #owl-demo:hover .item img {
+    transition: transform 0.5s;
+    transform: rotate(0deg)
+} */
+
+.item:hover .outer-frame {
+    transform: rotate(0deg);
+    transition: transform 1s; 
+    
+}
+
+.item:hover .image {
+    transform: rotate(0deg) !important;
+    transition: transform 1s; 
+}
+
+.icon {
+    border: 1px solid;
+    padding: 6px;
+    border-radius: 50%;
+    color: #F7DC5F;
+    background: #03060D;
+    margin-right: 5px;
+}
+
+.highlight {
+    margin-top: -18px;
+    padding: 0.5em;
+}
+
+.track-button-container {
+    position: absolute;
+    width: 100%;
+    bottom: 2em;
+    animation-name: updown;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes updown {
+    from { bottom: 2.5em; }
+    to {bottom: 2em;}
+  }
+  
+
+.truck-favicon {
+    margin-top: -5px;
+}
+
+@media screen and (max-width: 768px) {
+   .truck-image {
+       max-height: 80px;
+   }
+
+   h2 {
+       font-size: 15px !important;
+   }
+}
+
+.col-6 span {
+    display: block;
+}
+
+.text-container {
+    padding: 3em 3em;
+}
+
+
+.icon-container svg{
+    height: 8em;
+}
+
+.information {
+    box-shadow: 3px 22px 32px 0px #515050;
+    padding: 5px;
+    margin-bottom: 30px;
+    border-radius: 11px;
+    width: 9em;
+}
+
+.information:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s;
+}

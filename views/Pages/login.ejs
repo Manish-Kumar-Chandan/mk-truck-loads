@@ -1,0 +1,30 @@
+<% include ../Partials/HeaderRoot  %>
+<% include ../Partials/Header %>
+
+    <div class="wrapper-page ">
+        <% include ./loder %>
+
+        <div class="card overflow-hidden account-card mx-3 border shadow-lg">
+            <div class="bg-primary p-4 text-white text-center position-relative">
+                <h4 class="font-20 text-dark m-b-5">Welcome to Truck loads!</h4>
+                <p class="text-dark mb-4">Sign in to continue to Truck Loads.</p>
+                <a class="logo logo-admin"><img src="/public/assets/images/logo-sm.svg" height="26" alt="logo"></a>
+            </div>
+            <div class="account-card-content"> 
+                
+                <% include ../Forms/login %>
+            </div>
+        </div>
+
+        <div class="m-t-40 text-center">
+            <p>Don't have an account ? <a href="/register" class="font-500 text-primary"> Signup now </a> </p>
+        </div>
+
+    </div>
+    <!-- end wrapper-page -->
+
+
+<script src="/public/assets/js/login.js"></script>   
+<% include ../Partials/FooterLink  %>
+<% include ../Partials/Footer  %>
+<% include ../Partials/FooterRoot  %>

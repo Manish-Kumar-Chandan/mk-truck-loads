@@ -1,0 +1,198 @@
+<header id="topnav">
+    <div class="topbar-main">
+        <div class="container-fluid p-0">
+
+            <div class="logo">
+
+                <div>
+                    <a href="/home" class="logo">
+                        <img src="/public/assets/images/logo-light.svg" alt="hvh" class="logo-large">
+                    </a>
+                </div>
+                <div class="text-primary logo-lines">Leading Market Place For Transport & Warehouse Solutions</div>
+            </div>
+
+            <div class="menu-extras topbar-custom">
+                <ul class="navbar-right list-inline float-right mb-0 ">
+                    <!-- notification -->
+                    <li class="dropdown notification-list list-inline-item km-container">
+                        <h3 class="text-primary">189,105 Km</h3>
+                        <span class="small text-primary"
+                            style="position: absolute; margin-top: -10px; width: 110%;">Transport in last 24
+                            hrs
+                        </span>
+                    </li>
+                    <% if (user) { %> 
+                        
+                        <li class="dropdown notification-list list-inline-item">
+                            <div class="dropdown notification-list nav-pro-img">
+                                <a class="dropdown-toggle nav-link arrow-none nav-user" data-toggle="dropdown" href="#"
+                                    role="button" aria-haspopup="false" aria-expanded="false">
+                                    <i class="fa fa-user p-2 bg-primary text-dark rounded-circle "></i> <span
+                                        class="ml-1 text-primary text-capitalize"><%=  user ? user.firstName : '' %></span>
+                                </a>
+                                <div class="dropdown-menu bg-dark text-primary">
+
+                                    <a class="dropdown-item text-primary bg-dark" href="/profile">
+                                        <i class="mdi mdi-account-circle"></i> profile</a>
+
+                                    <!-- <a class="dropdown-item text-primary bg-dark" href="/all-payment">
+                                        <i class="fa fa-credit-card"></i> payment</a> -->
+                                        <% if(user.role == 'Carrier') {%>
+                                            <a class="dropdown-item text-primary bg-dark" href="/truck">
+                                                <i class="fa fa-truck"></i> Truck</a>
+                                        <%} %>   
+                                     
+
+                                    <a class="dropdown-item text-primary bg-dark" href="/feedback">
+                                        <i class="far fa-comments"></i> Feedback</a>
+
+                                    <a class="dropdown-item text-primary bg-dark" id="logout"><i
+                                            class="mdi mdi-power text-primary"></i> Logout</a>
+                                </div>
+                            </div>
+                        </li>
+                    <% } %>
+                    <% if (!user) {%>
+                        <a href="/login" type="button"  class="ml-3 mt-2 btn btn-primary ">Login</a>
+                    <% } %>    
+                    <li class="menu-item list-inline-item">
+                        <!-- Mobile menu toggle-->
+                        <a class="navbar-toggle nav-link">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+                        <!-- End mobile menu toggle-->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar-custom">
+        <div class="container-fluid">
+            <div id="navigation">
+
+                <!-- Menu Start -->
+                <ul class="navigation-menu">
+                    <li class="has-submenu">
+                        <a href="/home" class="<%= title === 'home' ? 'active' : '' %>"><i class="ti-home"></i>Home</a>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#" class="<%= title === 'how-it-works' ? 'active' : '' %>"><i class="ti-pencil" ></i>How It Works</a>
+                        <ul class="submenu megamenu">
+                            
+                            <li>
+                                <ul>
+                                    <li><a href="/how-it-work/carriers">Carriers</a></li>
+                                    <li><a href="/how-it-work/shippers">Shippers</a></li>
+                                    <li><a href="/about">About Us</a></li>
+                            
+                                </ul>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <% if (!user || user.role === 'Shipper') { %>
+                    
+                    <li class="has-submenu">
+                        <a href="#" class="<%= title === 'get-a-quote' ? 'active' : '' %>"><i class="ti-quote-left" ></i> Get a Quote</a>
+                        <ul class="submenu megamenu">
+                            <li>
+                                <ul>
+                                    <li><a href="<%= user ?  '/get-a-quote/cars': '/login' %> ">Cars Transport</a></li>
+                                    <li><a href="<%= user ? '/get-a-quote/bike' : '/login' %> ">Bikes Transport</a></li>
+                                    <li><a href="<%= user ? '/get-a-quote/furniture' : '/login' %> ">Furniture Transport</a></li>
+                                    <li><a href="<%= user ? '/get-a-quote/boat' : '/login' %> ">Boat Transport</a></li>
+                                    <li><a href="<%= user ? '/get-a-quote/home' : '/login' %>">Home Transport</a></li>
+                                    <li><a href="<%= user ? '/get-a-quote/pallets': '/login' %>">Pallets Transport</a></li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li><a href="<%= user ? '/get-a-quote/waste': '/login' %> ">Waste Transport</a></li>
+                                    <li><a href="<%= user ?  '/get-a-quote/trucks': '/login' %> ">Trucks Transport</a></li>
+                                    <li><a href="<%= user ?  '/get-a-quote/other-vehicle': '/login' %> ">other vehicles Transport</a></li>
+                                    <li><a href="<%= user ?  '/get-a-quote/container': '/login' %> ">Container Transport</a></li>
+                                    <li><a href="<%= user ?  '/get-a-quote/houlage': '/login' %> ">Houlage Transport</a></li>
+                                    <li><a href="<%= user ?  '/get-a-quote/livestock': '/login' %> ">Pets & Livestock Transport</a></li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li><a href="<%= user ?  '/get-a-quote/heavy': '/login' %> ">Heavy Transport</a></li>
+                                    <li><a href="<%= user ?  '/get-a-quote/agriculture': '/login' %> ">Agriculture Transport</a></li>
+                                    <li><a href="<%= user ?  '/get-a-quote/mining-machine': '/login' %> ">Machine Transport</a></li>
+                                    <li><a href="<%= user ?  '/get-a-quote/automotive': '/login' %> ">Automaotive Transport</a></li>
+                                    <li><a href="<%= user ?  '/get-a-quote/refrigrated': '/login' %> ">Refrigrated Transport</a></li>
+                                    <li><a href="<%= user ?  '/get-a-quote/warehouse': '/login' %> ">Warehouse </a></li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <% } %>
+                    <li class="has-submenu">
+                        <a href="/warehouse" class="<%= title === 'warehouse' ? 'active' : '' %>"><i class="ti-package" ></i>Warehouse</a>
+                    </li>
+                
+                    <li class="has-submenu">
+                        <a href="#" class="<%= title === 'jobs' ? 'active' : '' %>"><i class="ti-desktop" ></i>Find Jobs</a>
+                        <ul class="submenu megamenu">
+                            
+                            <li>
+                                <ul>
+                                    <li>
+                                        <a href="/jobs"><i class=""></i>New Jobs</a>
+                                    </li>
+                                    <li>
+                                        <a href="<%= user ?  '/track-order': '/login' %> "><i class=""></i>Track a Job</a>
+                                    </li>
+                            
+                                </ul>
+                            </li>
+                            
+                        </ul>
+                    </li>
+
+                    <li class="has-submenu">
+                        <a href="<%= user ?  '/chat': '/login' %> " class="<%= title === 'chat' ? 'active' : '' %>"><i class="ti-align-justify"></i>chat</a>
+                    </li>
+                    <!--ankur-->
+                    <li class="has-submenu">
+                        <a href="<%= user ?  '/invitation': '/login' %> " class="<%= title === 'invitation' ? 'active' : '' %>"><i class="ti-align-justify"></i>invitation</a>
+                    </li>
+                    <!--ankur end-->
+                </ul>
+                <!-- menu end -->
+
+            </div>
+
+        </div>
+        
+    </div>
+    
+</header>
+
+<script>
+    jQuery(() => {
+        $('#logout').on('click', () => {
+            $.ajax({
+                url: '/logout',
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+            }).done((response) => {
+                if(response.status) {
+                    window.location.href = '/home'
+                }
+            })
+        })
+    })
+</script>

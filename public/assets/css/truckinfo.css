@@ -1,0 +1,61 @@
+.truck_Main{
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+
+.Add_truck{
+    float: right;
+    background-color: #F7DC5F;
+    border: 1px solid #F7DC5F;
+    color: #03060d;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.Add-truck-table{
+    background-color: #F7DC5F;
+    border: 1px solid #F7DC5F;
+}
+.add-truck-tabs{
+    text-decoration: none !important;
+}
+.add-truck-tabsMain:hover{
+    background-color: #03060D !important; 
+    color: #F7DC5F;
+}
+.modal-dialog {
+    max-width: 40%;
+}
+.comments{
+    font-weight: 900;
+    color: #2a3142;
+}
+.pushme2{
+    cursor: pointer;
+    text-decoration: underline !important;
+}
+.pushme1{
+    cursor: pointer;
+    text-decoration: underline !important;
+}
+.Add-truck-content{
+    margin-bottom: 3px;
+}
+.upload-image {
+    margin-top: 33px;
+}
+.Truck_map{
+    width: 730px;
+    margin-left: auto;
+    margin-top: 15px;
+}
+
+/***************************MEDIA-QUERY***************************/
+@media screen and (max-width: 1024px){
+.modal-dialog {
+    max-width: 97%;
+}
+.upload-image {
+    margin-top: 5px;
+}
+}

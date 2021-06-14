@@ -1,0 +1,20 @@
+<% include ./category %>
+
+<% include ./model %>
+
+<% include ./measure %>
+
+  <div class="form-group mb-1">
+    <label for="medium" >Medium:</label>
+    <select id="medium" class="form-control" name="medium">
+        <option selected="selected" value="0">Trucked</option>
+        <option value="1" >Towed</option>
+        <option value="3" >Trucked And Towed</option>
+    </select>
+ </div>
+ 
+ 
+ <div class="custom-control mb-1 mt-3 custom-switch">
+    <input type="checkbox" class="custom-control-input" id="empty">
+    <label class="custom-control-label" for="empty" name="empty">Is it Empty?</label>
+  </div>

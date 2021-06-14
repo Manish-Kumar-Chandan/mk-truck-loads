@@ -1,0 +1,290 @@
+<% include ../Partials/HeaderRoot  %>
+<% include ../Partials/Header %>
+
+
+
+<div class="wrapper">
+    <% include ./loder %>
+
+    <% include ./alert %>
+
+    <div class="container mt-3 mb-3">
+        <h2><%= page %></h2>
+        <p>You can see your shipment details here</p>
+        <div class="card shadow">
+            <div class="card-body">
+                <% include ./shipment-detail %>
+
+                <div class="row mt-3">
+                    <div class="col-12">
+
+                        <div class="card  ">
+                            <div class="card-body ">
+                                <h4 class="mt-0 header-title "><%= user.role === 'Shipper' ? 'Quotes' : 'Your Proposal' %></h4>
+                                
+                                <p class="small mb-3">
+                                    <%= user.role === 'Shipper' ? 'You can hire carrier here.' : 'You can see your Proposal Here' %></p>
+                                <div id="accordion">
+                                    
+                                    <% for(let i=0; i< bids.length ; i++) { %>
+                                            <% if (user.role === 'Shipper') { %>
+                                            <div class="card">
+                                              <div class="p-2" >
+                                                <div class="row">
+                                                    <div class="col-6 text-capitalize">
+                                                         <%= bids[i].user.firstName %> 
+                                                         <% if (bids[i].quote.status !== 'Live'  &&  bids[i].user._id.toString() ===  jobs.carrier._id.toString() )  { %>
+                                                            <span class="<%= bids[i].quote.status === 'In Progress' ? 'text-primary' : 'text-success' %>">☑</span> 
+                                                        <% } %> 
+                                                    </div>
+                                                    <div class="col-6 text-right">
+                                                        <button class="btn btn-sm btn-primary" data-toggle="collapse" href="#collapse<%= i+1 %>">View</button>
+                                                        
+                                                    </div>
+
+                                                </div>
+                                              </div>
+                                              <div id="collapse<%= i+1 %>" class="collapse" data-parent="#accordion">
+                                                <div class="card-body small">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <b class="font-weight-bolder">Price</b> <%= bids[i].bid  %> $
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <b class="font-weight-bolder">Date</b> <%= bids[i].time %>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <b class="font-weight-bolder">Proposal</b> <%= bids[i].proposal %>
+                                                        </div>
+                                                        <div class="col-12 mt-1">
+                                                            <% if(bids[i].quote.status === 'Live') {%>
+                                                                <button class="btn btn-sm btn-primary hire-button" carrier="<%= bids[i].user._id %>" job="<%= bids[i].quote._id %>" >Hire </button>
+                                                                <button class="btn btn-sm btn-primary decline-button" bid="<%= bids[i]._id %>" carrier="<%= bids[i].user._id %>" job="<%= bids[i].quote._id %>" >Decline </button>  
+                                                            <%} %>
+                                                            <% if(user.role === 'Shipper') { %>
+                                                                <button class="btn btn-primary btn-sm message-button" carrier="<%= bids[i].user._id %>" job="<%= bids[i].quote._id %>" >Message</button>
+                                                            <% } %>
+                                                            
+                                                        </div>
+
+                                                    </div>
+                                                    
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <% }  else {%>
+                                                <% if (bids[i].user._id.toString() === user._id.toString()) { %>
+                                                    
+                                                    <div class="row small">
+                                                        <div class="col-6 text-capitalize">
+                                                            <%= bids[i].user.firstName %> 
+                                                            <% if (bids[i].quote.status !== 'Live'  &&  bids[i].user._id.toString() ===  jobs.carrier._id.toString() )  { %>
+                                                               <span class="<%= bids[i].quote.status === 'In Progress' ? 'text-primary' : 'text-success' %>">☑</span> 
+                                                           <% } %> 
+                                                       </div>
+                                                        <div class="col-sm-6">
+                                                            <b class="font-weight-bolder">Price</b> <%= bids[i].bid  %> $
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <b class="font-weight-bolder">Date</b> <%= bids[i].time %>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <b class="font-weight-bolder">Proposal</b> <%= bids[i].proposal %>
+                                                        </div>
+                                                        <div class="col-12 mt-1">
+                                                           
+                                                            <% if(user.role === 'Shipper') { %>
+                                                                <button class="btn btn-primary btn-sm message-button" carrier="<%= bids[i].user._id %>" job="<%= bids[i].quote._id %>" >Message</button>
+                                                            <% } %>
+                                                            
+                                                        </div>
+
+                                                    </div>
+                                                <% } %>
+                                            <% } %>
+                                    <% } %>
+                                    </div>
+                                   
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <%  if (jobs) { %>
+                    <% if (jobs.status === 'ended' || jobs.status === 'completed' ) { %>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="mt-0 header-title mb-4">Feedback</h4>
+                                    <% if (jobs.carrierFeedback) { %>
+                                    <div class="media  p-3">
+                                        <img src="/public/assets/images/avatar.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:50px;">
+                                        <div class="media-body">
+                                            <h4><%= jobs.carrierFeedback.user.firstName +' ' +jobs.carrierFeedback.user.lastName %>
+                                                <small class="star-container ml-1">
+                                                    <% for (let  i=0 ; i< jobs.carrierFeedback.stars; i ++) { %>
+                                                        <span class="fa fa-star checked"></span>
+                                                    <% } %>
+                                                </small>
+                                            </h4>
+                                        <p>
+                                            <%= jobs.carrierFeedback.feedback %>
+                                        </p>
+                                        </div>
+                                    </div>
+                                    <% } %>
+                                    <% if (jobs.shipperFeedback) { %>
+                                    <div class="media  p-3">
+                                        <img src="/public/assets/images/avatar.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:50px;">
+                                        <div class="media-body">
+                                            <h4><%= jobs.shipperFeedback.user.firstName +' ' +jobs.shipperFeedback.user.lastName %>
+
+                                                <small class="star-container ml-1">
+                                                    <% for (let  i=0 ; i< jobs.shipperFeedback.stars; i ++) { %>
+                                                        <span class="fa fa-star checked"></span>
+                                                    
+                                                        <% } %>
+                                                </small>
+                                            </h4>
+                                        <p>
+                                            <%= jobs.shipperFeedback.feedback %>
+
+                                        </p>
+                                        </div>
+                                    </div>
+                                    <% } %>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+                    <%} %>
+            </div>
+        </div>
+    </div>
+<style>
+    @media screen and (max-width: 576px) {
+        .container {
+            padding: 0
+        }
+    }
+</style>
+    <script>
+
+        jQuery(() => {
+
+
+
+            $('.message-button').on('click', function (e) {
+                e.preventDefault();
+
+                let carrier = $(this).attr('carrier');
+                let job = $(this).attr('job');
+
+                $(this).attr('disabled', true);
+                $.ajax({
+                    type: 'POST',
+                    url: '/setup-chat',
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    data: {
+                        carrier,
+                        job
+                    }
+
+                }).done((response) => {
+                    window.location.href = `/chat/${response.chatId}`;
+                }).fail((err) => {
+                    let error =  err.responseJSON.error;
+
+                    let errorMessage = 'Unkown Error Occurs';
+
+                    switch(error) {
+                        case 'INTERNAL_SERVER': 
+                            errorMessage = 'Internal SErver Error';
+                            break;
+                        case 'UNAUTHORIZED':
+                            errorMessage = 'Unauthorized';
+                            break;
+                        
+                    }
+
+                    alert(errorMessage)
+
+
+                })
+            })
+
+            $('.hire-button').on('click', function()  {
+            let carrier = $(this).attr('carrier');
+            let job = $(this).attr('job');
+
+            $(this).attr('disabled', true);
+            
+            $.ajax({
+                    type: 'POST',
+                    url: '/assign-job',
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    data: {
+                        carrier: carrier,
+                        job: job
+                    }
+
+                }).done((response) => {
+                    window.location.reload();
+                }).fail((err) => {
+                    let response = (err.responseJSON)
+                    console.log(response)
+                    $(this).attr('disabled', false);
+
+                    alert('Something Went Wrong!')
+                })
+
+            })
+
+
+            $('.decline-button').on('click', function(e) {
+                e.preventDefault();
+
+                let bid = $(this).attr('bid');
+                let carrier = $(this).attr('carrier');
+                let job = $(this).attr('job');
+
+                $(this).attr('disabled', true);
+                $.ajax({
+                    type: 'POST',
+                    url: '/decline-job',
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    data: {
+                        carrier: carrier,
+                        job: job,
+                        bid: bid
+                    }
+
+                }).done((response) => {
+                   window.location.reload(true)
+                }).fail((err) => {
+                    let response = (err.responseJSON)
+                    console.log(response)
+                    $(this).attr('disabled', false);
+
+                    alert('Something Went Wrong!')
+                })
+
+
+
+            })
+        })
+    </script>
+
+    <% include ../Partials/FooterLink  %>
+    <% include ../Partials/Footer %>
+    <% include ../Partials/FooterRoot  %>

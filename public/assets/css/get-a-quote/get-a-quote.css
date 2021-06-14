@@ -1,0 +1,57 @@
+.date {
+    display: none;
+}
+
+option {
+    background-color: black;
+    color: #F7DC5F;
+}
+
+.preview-container {
+    display: none;
+    height: 20em;
+}
+
+.moterhome {
+    display: none;
+}
+
+.highlight {
+    color: #F7DC5F !important;
+    padding: 0.3em !important;
+    border-radius: 5px !important;
+    background-color: #03060D !important;
+}
+
+
+.image {
+    box-shadow: 0px 3px 25px 0px lightgrey;
+}
+
+
+/* input, select, textarea {
+    box-shadow: 0px 1px 10px 0px rgba(0,0,0,.15)!important
+} */
+
+.not-in-list {
+    z-index: 100;
+    position: fixed;
+    height: 100vh;
+    color: #F7DC5F !important;
+    text-align: center;
+    padding-top: 25%;
+    vertical-align: middle;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg, #000000e3, #000000e3);
+}
+
+
+.construction {
+    display: none;
+}
+
+.image-container {
+    height: 300px;
+}

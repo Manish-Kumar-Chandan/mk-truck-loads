@@ -1,0 +1,8 @@
+thead tr {
+    height: 0px !important;
+}
+
+.passbook-card {
+    height: 600px;
+    overflow: auto;
+}

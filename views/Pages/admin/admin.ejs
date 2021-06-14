@@ -1,0 +1,65 @@
+<% include ../../Partials/HeaderRoot  %>
+<% include ../../Partials/adminHeader %>
+
+
+
+<div class="wrapper pt-3">
+    <% include ../loder %>
+    <div id="mySidenav" class="sidenav">
+        <% include ../../Partials/Sidebar %>
+    </div>
+
+
+    <div id="main">
+        <div class="row">
+            <div class="col-12 ">
+                <span style="font-size:30px;cursor:pointer text-primary" onclick="openNavController()">&#9776;</span>
+                <span class="page ml-3"><%= page %></span>
+            </div>
+            
+            <div class="col-12">
+                <% if (page === 'dashboard') { %>
+                    <% include ./dashboard %>
+                <% } else if (page === 'shippers') {%>
+                    <% include ./shippers %>
+                <% } else if (page === 'carriers') {%>
+                    <% include ./carrier %>
+                <% } else if (page === 'shipment-details') {%>
+                    <% include ./shipment_details %>
+                <% } else if (page === 'payment') {%>
+                    <% include ./payment %>
+                <% } else if (page === 'email') {%>
+                    <% include ./email %>
+                <% } else if (page === 'feedback') {%>
+                    <% include ./feedback %>
+                <% } %>  
+            </div>
+        </div>
+
+        
+    </div>
+
+
+</div>
+
+<% include ../../Partials/adminfooter %>
+<% include ../../Partials/FooterRoot  %>
+
+
+<link rel="stylesheet" href="/public/assets/css/admin/admin.css">
+<link rel="stylesheet" href="/public/plugins/chartist/css/chartist.min.css">
+
+<!--Chartist Chart-->
+<script src="/public/plugins/chartist/js/chartist.min.js"></script>
+<script src="/public/plugins/chartist/js/chartist-plugin-tooltip.min.js"></script>
+<!-- peity JS -->
+<script src="/public/plugins/peity-chart/jquery.peity.min.js"></script>
+
+<script src="/public/assets/js/charts.js"></script>
+
+
+<script src="/public/assets/js/sidenav.js"></script>
+
+<link rel="stylesheet" href="/public/plugins/datatables/datatable.css">
+<script src="/public/plugins/datatables/datatable.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.scrollto/2.1.2/jquery.scrollTo.min.js"></script>

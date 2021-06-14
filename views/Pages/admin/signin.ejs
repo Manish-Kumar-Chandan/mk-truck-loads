@@ -1,0 +1,68 @@
+<% include ../../Partials/HeaderRoot  %>
+<% include ../../Partials/Header %>
+
+    <div class="wrapper-page ">
+        <% include ../loder %>
+
+        <div class="card overflow-hidden account-card mx-3 border shadow-lg">
+            <div class="bg-primary p-4 text-white text-center position-relative">
+                <h4 class="font-20 text-dark m-b-5">Welcome to Truck loads!</h4>
+                <p class="text-dark mb-4">Sign in As Admin.</p>
+                <a class="logo logo-admin"><img src="/public/assets/images/logo-sm.svg" height="26" alt="logo"></a>
+            </div>
+            <div class="account-card-content"> 
+                <form class="form-horizontal m-t-30" id="admin-login-form" >
+
+                    <div class="form-group">
+                        <label for="username"  class="small font-weight-bolder">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter Email"  required>
+                    </div>
+                
+                    <div class="form-group mt-2">
+                        <label for="password"  class="small font-weight-bolder">password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+                    </div>
+                
+                    <div class="form-group row mt-2">
+                        <div class="col-sm-6 mt-2">
+                            <div class="custom-control custom-checkbox mt-3">
+                                <input type="checkbox" class="custom-control-input" id="remember" name="remember">
+                                <label class="custom-control-label" for="remember">Remember me</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 text-right ">
+                            <button class="btn btn-primary w-md waves-effect waves-light mt-4 admin-login-button" type="submit">Log In</button>
+                        </div>
+                    </div>
+                
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- end wrapper-page -->
+
+
+<% include ../..//Partials/FooterLink  %>
+<% include ../../Partials/Footer  %>
+<% include ../../Partials/FooterRoot  %>
+
+<script>
+    jQuery(() => {
+        $('#admin-login-form').on('submit', (e) => {
+            e.preventDefault();
+
+            let data = {
+                'email': $('#email').val(),
+                'password': $('#password').val(),
+                'remember': $('#remember').prop('checked')
+            }
+
+            $('.admin-login-button').attr('disabled', true)
+            $('.admin-login-button').text('Loading ...')
+
+            Controller.adminLogin(data)
+        })
+    })
+</script>

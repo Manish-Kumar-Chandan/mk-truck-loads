@@ -1,0 +1,272 @@
+<% include ../Partials/HeaderRoot  %>
+<% include ../Partials/Header %>
+<div class="ex-pages">
+    <div class="content-center">
+        <div class="content-desc-center">
+            <div class="container">
+              <div>
+                <!-- <button type="button" class="btn btn-info btn-lg Add_truck" data-toggle="modal" data-target="#addTruck">Add truck</button> -->
+                <button type="button" class="btn btn-primary btn-lg Add_truck" data-toggle="modal" data-target="#addTruck">Add truck</button>
+              </div>
+
+                       <h2>All truck information</h2>          
+                        <table class="table table-striped Add-truck-table mb-0">
+                          <thead>
+                            <tr>
+                              <th>Sr No:</th>
+                              <th>Truck Image </th>
+                              <th>Truck Name </th>
+                              <th>Truck Number </th>
+                              <th>Action</th>
+                            </tr>
+                          </thead>
+                          
+                            <!-- <% for(let i=0; i<= data.length-1; i++) { %>
+                              <tbody>
+                                <td><%=i+1 %></td>
+                                <td><image src="<%=data[i].truckImage%>" style="height: 100px; width: 100px;"></image></td>
+                                <td><%= data[i].truckName%></td>
+                                <td><%= data[i].truckNumber %></td>
+                                <td>
+                                <button class="btn btn-primary"><a href="/truck-edit-page?id=<%= data[i].id %>">Edit</a></button>
+                                <button class="btn btn-danger"><a href="/delete?id=<%= data[i].id%>">Delete</a></button>
+                              </td>
+                               
+                              </tbody>
+                            <% } %> -->
+                           
+                         
+                        </table>
+
+                        <div id="accordion">
+                          <% for(let i=0; i<= data.length-1; i++) { %>
+                          <div class="card">
+                            <div class="card-header p-0 add-truck-tabsMain bg-white"   id="headingOne">
+                              <h5 class="mb-0 mt-0">
+                                <button class="btn btn-link w-100 add-truck-tabs" data-toggle="collapse" data-target="#collapse<%= i %>" aria-expanded="true" aria-controls="collapseOne">
+                                  <table class="w-100">
+                                    <thead>
+                                      <tr>
+                                        <th><%= i+1 %> </th>
+                                        <th><image src="<%=data[i].truckImage%>" style="height: 50px; width: 50px;" onError="this.onerror=null;this.src='/public/assets/images/no-image.png';" ></image> </th>
+                                        <th><%= data[i].truckName%> </th>
+                                        <th><%= data[i].truckNumber %> </th>
+                                        <th>
+                                          <button class="btn btn-primary"><a href="/truck-edit-page?id=<%= data[i].id %>">Edit</a></button>
+                                          <button class="btn btn-danger"><a href="/delete?id=<%= data[i].id%>">Delete</a></button>
+                                        </th>
+                                      </tr>
+                                    </thead>
+                                  </table>
+
+
+                                </button>
+                              </h5>
+                            </div>
+                        
+                            <div id="collapse<%= i %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                              <div class="card-body">
+                                <h3 class="text-center"><%= data[i].company %> </h3>
+                                <div class="row">
+                                  <div class="col-md-4">
+                                    <img src="<%=data[i].truckImage%>" alt="dummy" width="80%" onError="this.onerror=null;this.src='/public/assets/images/no-image.png';">
+                                  </div>
+                                  <div class="col-md-4"> 
+                                      <p class="Add-truck-content"><%= data[i].date %> </p>
+                                      <p class="Add-truck-content"><%= data[i].name %></p>
+                                      <p class="Add-truck-content"><u><a id='phone' onClick="showPhone( '<%= data[i].phone  %>' )" >click to view phone</a></u></p>
+                                      <p class="Add-truck-content"><a class='with-color' id="email" onClick="showEmail(' <%= data[i].email %>')">Click to view Email</a></p>
+                                     
+                                  </div>
+                                  <div class="col-md-4">
+                                    <span class="comments"><u>Comments:</u></span><br>
+                                    <p><%= data[i].comment %> </p>
+                                   </div> 
+                                   
+                                </div>
+
+                              </div>
+                            </div>
+                         
+                          </div>
+                          <% } %>
+                        </div>
+
+
+
+
+
+
+
+            <!-- end container -->
+        </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="addTruck">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+          <h4 class="modal-title">Add truck information</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+      <form id="add-truck-form" enctype="multipart/form-data">
+          <div class="form-group mt-1 mb-1 preview-container text-center">
+              <img src="" id="preview" class="h-40 w-40">
+          </div> 
+          
+          <div class="col-12">
+              <div class="col-sm-12">
+                  <label>Name</label>
+                  <input id="name" name="name" type="text" value=""  class="form-control" placeholder="Name" required>
+            <div class="row">
+                <div class="col-sm-6 mb-3">
+                    <label>Truck Name</label>
+                    <input id="truckName" name="truckName" type="text" value=""  class="form-control" placeholder="Truck Name" required>
+                </div>
+                <div class="col-sm-6 mb-3">
+                    <label>Truck Number </label>
+                    <input id="truckNumber" name="truckNumber" type="text" value=""  class="form-control" placeholder="Truck Number"  required>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 mb-3">
+                <label>Phone</label>
+                <!-- <input id="phone" name="phone" type="tel" value=""  class="form-control"  placeholder="00000-00000" pattern="[0-9]{5}-[0-9]{5}" required> -->
+                <input type="tel" id="phoneNo" name="phoneNo" value="" class="form-control" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;" placeholder="00000-00000" required>
+
+              </div>
+              <div class="col-sm-6 mb-3">
+                <label>Email</label>
+                <input id="emailId" name="emailId" type="email" value=""  class="form-control" placeholder="example@gmail.com" required>
+              </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 mb-3">
+                  <label>Company</label>
+                  <input type="text" id="company" name="company" value="" class="form-control" placeholder="Company" required>
+                </div>
+                <div class="col-sm-6 mb-3">
+                  <label>Date</label>
+                  <input id="datepicker" name="date" class="form-control" placeholder="dd/mm/yy" data-provide="datepicker">
+                  
+                </div>
+            </div>
+
+            <!-- <div class="row">
+              <div class="col-sm-6 mb-3">
+                <label>Equipment Category</label>
+                <select id="equipment-category" name="equipment-category" class="form-control" required>
+                  <option value="0">Select Equipment Category</option>
+                  <option value="1">Flat Top</option>
+                  <option value="2">Drop Deck</option>
+                  <option value="3">Low Loader</option>
+                  <option value="4">Float</option>
+                  <option value="5">Platform</option>
+                  <option value="6">Tautliner</option>
+                  <option value="7">Bobtail Prime Mover</option>
+                  <option value="8">Tiltray</option>
+                  <option value="9">Rigid Flat Top</option>
+                  <option value="10">Rigid Pantech</option>
+                  <option value="11">Car Carrier</option>
+                  <option value="12">Crane Truck</option>
+                  <option value="12">Side Loader</option>
+                  <option value="14">Tipper</option>
+                  <option value="15">Tanker</option>
+                  <option value="16">Livestock</option>
+                  <option value="17">Refrigerated</option>
+                  <option value="18">UTE</option>
+                  <option value="19">Driver</option>
+                  <option value="20">Depot Facilities</option>
+                </select>
+              </div>
+              <div class="col-sm-12">
+                  <label>Truck Number </label>
+                  <input id="truckNumber" name="truckNumber" type="text" value=""  class="form-control" placeholder="Truck Number" pattern="[\w-_.]{6}" required>
+              </div>
+              <div class="col-sm-12 custom-file mb-1 mt-3">
+                
+            </div> -->
+
+            <div class="row">
+                <!-- <div class="col-sm-6 mb-3">
+                  <label>Destination Location</label>
+                  <input id="destination" type="text" class="form-control" name="destination" placeholder="Destination Location" required>
+                </div> -->
+                <div class="col-sm-6 mb-3">
+                  <label>Comments</label>
+                  <textarea class="form-control" name="comment" id="comments" rows="3" placeholder="Comments..."></textarea>
+                </div>
+                  
+                <div class="col-sm-6 custom-file mb-3 upload-image">
+                 
+                  <input type="file" class="form-control custom-file-input" name="file" id="file" required>
+                  <label class="custom-file-label" for="File" style="margin-left: 13px;margin-right: 13px;">Upload Photo</label>
+                  <!-- <input id="file" name="file" type="file" class="form-control custom-file-input" required> -->
+                  
+              </div>
+              <div class="col-sm-12 form-group mt-3 mb-5">
+                <button class="btn btn-primary text-dark add-truck-info" type="submit">Add Truck</button>
+            </div>
+
+            <div class="row">
+             
+                <div class="col-sm-12 form-group mt-3 mb-5">
+                  <button class="btn btn-primary text-dark add-truck-info" type="submit">Add Truck</button>
+              </div>
+            </div>
+          </div>
+          
+      </form>
+      </div>
+    
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary
+        
+        
+        " data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<script src="/public/assets/js/truck.js"></script>
+<link rel="stylesheet" href="/public/assets/css/truckinfo.css">
+<script>
+  $(document).ready(function(){
+  $(".pushme2").click(function(){
+  $(this).text(function(i, v){
+   return v === 'Click to view phone' ? '000000-00000' : 'Click to view phone'
+});
+});
+$(".pushme1").click(function(){
+  $(this).text(function(i, v){
+   return v === 'Click to view Email' ? 'Example@gmail.com' : 'Click to view Email'
+});
+});
+});
+
+function showPhone(phone_no) {
+  console.log("click",phone_no);
+   document.getElementById("phone").innerHTML= phone_no;
+}
+
+function showEmail(email) {
+  document.getElementById("email").innerHTML = email;
+}
+
+</script>
+<% include ../Partials/FooterLink  %>
+<% include ../Partials/Footer  %>
+<% include ../Partials/FooterRoot  %>

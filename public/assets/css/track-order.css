@@ -1,0 +1,66 @@
+.fa-box-open {
+    font-size: 5em;
+    border: 1px solid;
+    padding: 0.3em;
+    border-radius: 50%;
+    border-color: #dfdfdf;
+    color: #dad7d7;
+
+}
+
+#map {
+    height: 500px;
+    width: 100%;
+}
+
+.map {
+    overflow: hidden;
+}
+
+
+.details-container .float-left, .details-container .float-right {
+    width: 50%;
+}
+.bg-light {
+    background-color: #ECEBE9 !important;
+}
+
+.icon-container .icons {
+    height: 50px;
+    width: 50px;
+}
+
+.icon-container {
+    padding: 2em;
+}
+
+@media screen and (max-width: 768px) {
+    .icons {
+        height: 20px !important;
+        width: 20px !important;
+    }
+
+    .icon-name {
+        font-size: 12px;
+    }
+
+    .icon-container {
+        padding: 1em;
+    }
+}
+
+
+@media screen and (max-width: 572px) {
+    .icons {
+        height: 18px !important;
+        width: 18px !important;
+    }
+
+    .icon-name {
+        font-size: 10px;
+    }
+
+    .icon-container {
+        padding: 0.5em;
+    }
+}

@@ -1,0 +1,285 @@
+<form id="carrier-fleet-form">
+    <script>
+        var userId = "<%= userId %>"
+    </script>
+    <div class="row">
+        <div class="col-md-6 mb-2">
+            <a href="#trucks" class="btn btn-block btn-primary" data-toggle="collapse">Trucks</a>
+            <div id="trucks" class="collapse show">
+                <div class="form-group row p-1">
+                    <label for="prime_mover" class="col-8 text-left  col-form-label">Prime Mover</label>
+                    <div class="col-4">
+                        <input id="prime_mover" name="prime_mover" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="crane_truck" class="col-8 text-left  col-form-label">Crane Truck</label>
+                    <div class="col-4">
+                        <input id="crane_truck" name="crane_truck" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="tilt_tray" class="col-8 text-left  col-form-label">Tilt Tray</label>
+                    <div class="col-4">
+                        <input id="tilt_tray" name="tilt_tray" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="rigid_beavertail" class="col-8 text-left  col-form-label">Rigid Beavertail</label>
+                    <div class="col-4">
+                        <input id="rigid_beavertail" name="rigid_beavertail" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="rigid_flat_top" class="col-8 text-left  col-form-label">Rigid Flat Top</label>
+                    <div class="col-4">
+                        <input id="rigid_flat_top" name="rigid_flat_top" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="rigid_pantech" class="col-8 text-left  col-form-label">Rigid Pantech</label>
+                    <div class="col-4">
+                        <input id="rigid_pantech" name="rigid_pantech" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="rigid_with_tailgator" class="col-8 text-left  col-form-label">Rigid With
+                        Tailgator</label>
+                    <div class="col-4">
+                        <input id="rigid_with_tailgator" name="rigid_with_tailgator" type="number" min="0"
+                            class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="retrevier_tow_truck" class="col-8 text-left  col-form-label">Retrevier Tow Truck</label>
+                    <div class="col-4">
+                        <input id="retrevier_tow_truck" name="retrevier_tow_truck" type="number" min="0"
+                            class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-2">
+            <a href="#trailers" class="btn btn-block btn-primary" data-toggle="collapse">Trailers</a>
+            <div id="trailers" class="collapse">
+                <div class="form-group row p-1">
+                    <label for="drop_deck" class="col-8 text-left col-form-label">Drop Deck</label>
+                    <div class="col-4">
+                        <input id="drop_deck" name="drop_deck" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="flat_top" class="col-8 text-left col-form-label">Flat Top</label>
+                    <div class="col-4">
+                        <input id="flat_top" name="flat_top" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="curtain_sider" class="col-8 text-left col-form-label">Curtain Sider</label>
+                    <div class="col-4">
+                        <input id="curtain_sider" name="curtain_sider" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="deck_widner" class="col-8 text-left col-form-label">Deck Widner</label>
+                    <div class="col-4">
+                        <input id="deck_widner" name="deck_widner" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="low_loader" class="col-8 text-left col-form-label">Low Loader</label>
+                    <div class="col-4">
+                        <input id="low_loader" name="low_loader" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="car_carrier" class="col-8 text-left col-form-label">Car Carrier</label>
+                    <div class="col-4">
+                        <input id="car_carrier" name="car_carrier" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="dolly" class="col-8 text-left col-form-label">Dolly</label>
+                    <div class="col-4">
+                        <input id="dolly" name="dolly" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="refrigerated" class="col-8 text-left col-form-label">Refrigerated</label>
+                    <div class="col-4">
+                        <input id="refrigerated" name="refrigerated" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="side loader" class="col-8 text-left col-form-label">Side Loader</label>
+                    <div class="col-4">
+                        <input id="side_loader" name="side loader" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="skel" class="col-8 text-left col-form-label">Skel</label>
+                    <div class="col-4">
+                        <input id="skel" name="skel" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="mega_tilt" class="col-8 text-left col-form-label">Mega Tilt</label>
+                    <div class="col-4">
+                        <input id="mega_tilt" name="mega_tilt" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="platform" class="col-8 text-left col-form-label">Platform</label>
+                    <div class="col-4">
+                        <input id="platform" name="platform" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="walking_floor" class="col-8 text-left col-form-label">Walking Floor</label>
+                    <div class="col-4">
+                        <input id="walking_floor" name="walking_floor" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="live_stock" class="col-8 text-left col-form-label">Live Stock</label>
+                    <div class="col-4">
+                        <input id="live_stock" name="live_stock" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="grain_trailer" class="col-8 text-left col-form-label">Grain Trailer</label>
+                    <div class="col-4">
+                        <input id="grain_trailer" name="grain_trailer" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="tipper" class="col-8 text-left col-form-label">Tipper</label>
+                    <div class="col-4">
+                        <input id="tipper" name="tipper" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="extendable" class="col-8 text-left col-form-label">Extendable</label>
+                    <div class="col-4">
+                        <input id="extendable" name="extendable" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="side_tipper" class="col-8 text-left col-form-label">Side Tipper</label>
+                    <div class="col-4">
+                        <input id="side_tipper" name="side_tipper" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="tanker" class="col-8 text-left col-form-label">Tanker</label>
+                    <div class="col-4">
+                        <input id="tanker" name="tanker" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="dog_trailer" class="col-8 text-left col-form-label">Dog Trailer</label>
+                    <div class="col-4">
+                        <input id="dog_trailer" name="dog_trailer" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="horse_float" class="col-8 text-left col-form-label">Horse Float</label>
+                    <div class="col-4">
+                        <input id="horse_float" name="horse_float" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="logging" class="col-8 text-left col-form-label">Logging</label>
+                    <div class="col-4">
+                        <input id="logging" name="logging" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="pole_jinker" class="col-8 text-left col-form-label">Pole Jinker</label>
+                    <div class="col-4">
+                        <input id="pole_jinker" name="pole_jinker" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="pig_trailer" class="col-8 text-left col-form-label">Pig Trailer</label>
+                    <div class="col-4">
+                        <input id="pig_trailer" name="pig_trailer" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-2">
+            <a href="#configrations" class="btn btn-block btn-primary" data-toggle="collapse">Configrations</a>
+            <div id="configrations" class="collapse">
+                <div class="form-group row p-1">
+                    <label for="b_double" class="col-8 text-left col-form-label">B Double</label>
+                    <div class="col-4">
+                        <input id="b_double" name="b_double" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="road_train" class="col-8 text-left col-form-label">Road Train</label>
+                    <div class="col-4">
+                        <input id="road_train" name="road_train" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-6 mb-2">
+            <a href="#other" class="btn btn-block btn-primary" data-toggle="collapse">Other</a>
+            <div id="other" class="collapse">
+                <div class="form-group row p-1">
+                    <label for="pilot" class="col-8 text-left col-form-label">Pilot</label>
+                    <div class="col-4">
+                        <input id="pilot" name="pilot" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="hotshot" class="col-8 text-left col-form-label">Hotshot</label>
+                    <div class="col-4">
+                        <input id="hotshot" name="hotshot" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="ute" class="col-8 text-left col-form-label">UTE</label>
+                    <div class="col-4">
+                        <input id="ute" name="ute" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="depot_facilities" class="col-8 text-left col-form-label">Depot Facilities</label>
+                    <div class="col-4">
+                        <input id="depot_facilities" name="depot_facilities" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="bobtail_operator" class="col-8 text-left col-form-label">Bobtail Operator</label>
+                    <div class="col-4">
+                        <input id="bobtail_operator" name="bobtail_operator" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="drive_hire" class="col-8 text-left col-form-label">Drive Hire</label>
+                    <div class="col-4">
+                        <input id="drive_hire" name="drive_hire" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row p-1">
+                    <label for="trade_plates" class="col-8 text-left col-form-label">Trade Plates</label>
+                    <div class="col-4">
+                        <input id="trade_plates" name="trade_plates" type="number" min="0" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <input type="button" name="previous" class="previous action-button" value="Previous" /> 
+<input type="button" name="next" class="next action-button" value="Next" />
+ -->
+    <button type="submit" name="next" class="btn btn-primary mt-3 mb-3 fleet-button" value="button">Submit</button>
+</form>
+

@@ -1,0 +1,925 @@
+<% include ../Partials/HeaderRoot  %>
+<% include ../Partials/Header %>
+
+
+
+<div class="wrapper">
+    <% include ./loder %>
+
+    <% include ./alert %>
+
+    <div class="container profile-container">
+        <script>
+            var userId = "<%= user._id  %>";
+            var role = "<%= user.role %>" 
+        </script>
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header text-dark bg-primary">
+                        <h4 class="modal-title">Edit Profile</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <% if (user.role === 'Carrier') { %>
+                        <form id="carrier-profile-form">
+                            <% include ../Forms/profile %>
+                        </form>
+                        <% } else if (user.role === 'Shipper') { %>
+                        <form id="update-shipper-form">
+                            <% include ../Forms/shipper %>
+                            <button type="submit" class="btn btn-primary mt-3">Update</button>
+                        </form>
+                        <%  } %>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary text-dark" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card mt-2 mb-2 shadow">
+            <div class="card-body p-0">
+                <div class="row p-2">
+                    <div class="col-md-3">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                
+                                <% if(user.profilePic) { %>
+                                    <img src="<%= user.profilePic %>" class="h-100 w-100" onError="this.onerror=null;this.src='/public/assets/images/no-image.png';"><br><br><br>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProfile">
+                                        update profile image
+                                      </button>
+                                 <% } else { %>
+                                    <img src="/public/assets/images/avatar.png" class="h-100 w-100"><br><br><br>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProfile">
+                                    Add profile image
+                                  </button>
+                                  <% } %>
+                                <h4 class="mt-2 header-title mb-2 text-capitalize">Welcome <%=  user.firstName %></h4>
+                                
+                                <!-- <% if (user.role === 'Carrier')  { %>
+                                
+                                <div class="progress-bar-container ">
+                                    <div class="clearfix small">
+                                        <div class="float-left">Success</div>
+                                        <div class="float-right">72%</div>
+
+                                    </div>
+                                        <div class="progress" style="height: 6px;">
+                                            <div class="progress-bar text-dark small" style=" width:80%"></div>
+                                        </div>
+                                </div>
+                                <% } %>    
+                                 -->
+                                <div class="clearfix mt-2 font-weight-bolder">
+                                    <span class="float-left">
+                                        Total Money Spent
+                                    </span>
+                                    <span class="float-right">
+                                        500$
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="clearfix">
+                                    <div class="float-left">
+                                        <h4 class="text-capitalize"><%=  user.firstName %> <span
+                                                class="small">(<%=  user.role %>)</span></h4>
+                                    </div>
+                                    <div class="float-right">
+                                        <button class="btn btn-sm btn-primary update-button mt-2" type="button"
+                                            class="btn btn-primary" data-toggle="modal"
+                                            data-target="#myModal">Update</button>
+                                            <% if(user.role === 'Carrier') { %> 
+                                            <button data-toggle="collapse" class="btn btn-sm btn-primary mt-2"
+                                            data-target="#update-more">More</button>
+                                            <% } %>
+                                    </div>
+                                </div>
+                                <p></p>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="card shadow">
+                                    <div class="card-body">
+                                        <div class="row ">
+                                            <span class="col-md-6 mb-2">
+                                                <i class="fa fa-user border rounded-circle p-1 bg-primary mr-3"></i>
+                                                <span class="text-capitalize"><%=  user.firstName %></span>
+                                            </span>
+
+                                            <span class="col-md-6 mb-2">
+                                                <i class="fa fa-mobile border rounded-circle p-1 pl-2 pr-2 bg-primary mr-3"></i>
+                                                <span><%=  user.phone %></span>
+                                            </span>
+
+                                        </div>
+                                        <div class="row ">
+                                            <span class="col-md-6 mb-2">
+                                                <i class="fas fa-envelope border rounded-circle p-1 bg-primary mr-3"></i>
+                                                <span><%=  user.email %></span>
+                                            </span>
+                                            <span class="col-md-6 mb-2">
+                                                <i class="fa fa-home border rounded-circle p-1 bg-primary mr-3"></i>
+                                                <span><%=  user.address.length > 15 ? user.address.slice(0,15) + '...' : user.address %></span>
+                                            </span>
+
+                                        </div>
+                                        <div class="row ">
+                                            <span class="col-md-6 mb-2">
+                                                <i class="fas fa-unlock-alt border rounded-circle p-1 bg-primary mr-3"></i>
+                                                <span><%=  user.type %></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <% if (user.role === 'Carrier' ) { %>
+                            <div class="col-12 mt-3 mb-2">
+                                <div class="card shadow">
+                                    <div class="card-body pt-0 pb-0">
+                                        <div id="update-more" class="collapse mt-3">
+                                            <ul class="nav nav-tabs">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" data-toggle="tab" href="#fleet">Fleet</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#alert">Alerts</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab"
+                                                        href="#subscribe">Plans</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab"
+                                                        href="#Password">Change Password</a>
+                                                </li>
+                                            </ul>
+
+                                            <!-- Tab panes -->
+                                            <div class="tab-content">
+                                                <div class="tab-pane container active p-2" id="fleet">
+                                                    <form id="carrier-fleet-form">
+                                                        <div class="row">
+                                                            <div class="col-md-6 mb-2">
+                                                                <a href="#trucks" class="btn btn-block btn-primary"
+                                                                    data-toggle="collapse">Trucks</a>
+                                                                <div id="trucks" class="collapse show">
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="prime_mover"
+                                                                            class="col-8 text-left  col-form-label">Prime
+                                                                            Mover</label>
+                                                                        <div class="col-4">
+                                                                            <input id="prime_mover" name="prime_mover"
+                                                                                type="number" min="0"
+                                                                                value="<%= fleet.truck.primeMover %>"
+                                                                                class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="crane_truck"
+                                                                            class="col-8 text-left  col-form-label">Crane
+                                                                            Truck</label>
+                                                                        <div class="col-4">
+                                                                            <input id="crane_truck" name="crane_truck"
+                                                                                type="number" min="0"
+                                                                                value="<%= fleet.truck.craneTruck %>"
+                                                                                class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="tilt_tray"
+                                                                            class="col-8 text-left  col-form-label">Tilt
+                                                                            Tray</label>
+                                                                        <div class="col-4">
+                                                                            <input id="tilt_tray" name="tilt_tray"
+                                                                                type="number" min="0"
+                                                                                value="<%= fleet.truck.tiltTray %>"
+                                                                                class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="rigid_beavertail"
+                                                                            class="col-8 text-left  col-form-label">Rigid
+                                                                            Beavertail</label>
+                                                                        <div class="col-4">
+                                                                            <input id="rigid_beavertail"
+                                                                                name="rigid_beavertail" type="number"
+                                                                                min="0"
+                                                                                value="<%= fleet.truck.regidBeavertail %>"
+                                                                                class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="rigid_flat_top"
+                                                                            class="col-8 text-left  col-form-label">Rigid
+                                                                            Flat Top</label>
+                                                                        <div class="col-4">
+                                                                            <input id="rigid_flat_top"
+                                                                                name="rigid_flat_top" type="number"
+                                                                                min="0"
+                                                                                value="<%= fleet.truck.regidflattop %>"
+                                                                                class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="rigid_pantech"
+                                                                            class="col-8 text-left  col-form-label">Rigid
+                                                                            Pantech</label>
+                                                                        <div class="col-4">
+                                                                            <input id="rigid_pantech"
+                                                                                name="rigid_pantech" type="number"
+                                                                                min="0"
+                                                                                value="<%= fleet.truck.regidPantech %>"
+                                                                                class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="rigid_with_tailgator"
+                                                                            class="col-8 text-left  col-form-label">Rigid
+                                                                            With Tailgator</label>
+                                                                        <div class="col-4">
+                                                                            <input id="rigid_with_tailgator"
+                                                                                name="rigid_with_tailgator"
+                                                                                type="number" min="0"
+                                                                                value="<%= fleet.truck.regidWithTailgator %>"
+                                                                                class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="retrevier_tow_truck"
+                                                                            class="col-8 text-left  col-form-label">Retrevier
+                                                                            Tow Truck</label>
+                                                                        <div class="col-4">
+                                                                            <input id="retrevier_tow_truck"
+                                                                                name="retrevier_tow_truck" type="number"
+                                                                                value="<%= fleet.truck.retriverTowTruck %>"
+                                                                                min="0" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 mb-2">
+                                                                <a href="#trailers" class="btn btn-block btn-primary"
+                                                                    data-toggle="collapse">Trailers</a>
+                                                                <div id="trailers" class="collapse">
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="drop_deck"
+                                                                            class="col-8 text-left col-form-label">Drop
+                                                                            Deck</label>
+                                                                        <div class="col-4">
+                                                                            <input id="drop_deck" name="drop_deck"
+                                                                                type="number" min="0"
+                                                                                value="<%= fleet.trailer.dropDeck %>"
+                                                                                class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="flat_top"
+                                                                            class="col-8 text-left col-form-label">Flat
+                                                                            Top</label>
+                                                                        <div class="col-4">
+                                                                            <input id="flat_top" name="flat_top"
+                                                                                type="number" min="0"
+                                                                                value="<%= fleet.trailer.flatTop %>"
+                                                                                class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="curtain_sider"
+                                                                            class="col-8 text-left col-form-label">Curtain
+                                                                            Sider</label>
+                                                                        <div class="col-4">
+                                                                            <input id="curtain_sider"
+                                                                                name="curtain_sider" type="number"
+                                                                                min="0"
+                                                                                value="<%= fleet.trailer.curtainSlider %>"
+                                                                                class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="deck_widner"
+                                                                            class="col-8 text-left col-form-label">Deck
+                                                                            Widner</label>
+                                                                        <div class="col-4">
+                                                                            <input id="deck_widner" name="deck_widner"
+                                                                                type="number" min="0"
+                                                                                value="<%= fleet.trailer.deckWinder %>"
+                                                                                class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="low_loader"
+                                                                            class="col-8 text-left col-form-label">Low
+                                                                            Loader</label>
+                                                                        <div class="col-4">
+                                                                            <input id="low_loader" name="low_loader"
+                                                                                type="number" min="0"
+                                                                                value="<%= fleet.trailer.lowLoader %>"
+                                                                                class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="car_carrier"
+                                                                            class="col-8 text-left col-form-label">Car
+                                                                            Carrier</label>
+                                                                        <div class="col-4">
+                                                                            <input id="car_carrier" name="car_carrier"
+                                                                                type="number" min="0"
+                                                                                value="<%= fleet.trailer.carCarrier %>"
+                                                                                class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="dolly"
+                                                                            class="col-8 text-left col-form-label">Dolly</label>
+                                                                        <div class="col-4">
+                                                                            <input id="dolly" name="dolly" type="number"
+                                                                                min="0"
+                                                                                value="<%= fleet.trailer.dolly %>"
+                                                                                class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="refrigerated"
+                                                                            class="col-8 text-left col-form-label">Refrigerated</label>
+                                                                        <div class="col-4">
+                                                                            <input id="refrigerated" name="refrigerated"
+                                                                                type="number"
+                                                                                value="<%= fleet.trailer.refrigrated %>"
+                                                                                min="0" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="side loader"
+                                                                            class="col-8 text-left col-form-label">Side
+                                                                            Loader</label>
+                                                                        <div class="col-4">
+                                                                            <input id="side loader" name="side loader"
+                                                                                type="number" min="0"
+                                                                                value="<%= fleet.trailer.sideLoader %>"
+                                                                                class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="skel"
+                                                                            class="col-8 text-left col-form-label">Skel</label>
+                                                                        <div class="col-4">
+                                                                            <input id="skel" name="skel" type="number"
+                                                                                min="0"
+                                                                                value="<%= fleet.trailer.skel %>"
+                                                                                class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="mega_tilt"
+                                                                            class="col-8 text-left col-form-label">Mega
+                                                                            Tilt</label>
+                                                                        <div class="col-4">
+                                                                            <input id="mega_tilt" name="mega_tilt"
+                                                                                type="number" min="0"
+                                                                                value="<%= fleet.trailer.megaTilt %>"
+                                                                                class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="platform"
+                                                                            class="col-8 text-left col-form-label">Platform</label>
+                                                                        <div class="col-4">
+                                                                            <input id="platform" name="platform"
+                                                                                type="number" min="0"
+                                                                                value="<%= fleet.trailer.platform %>"
+                                                                                class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="walking_floor"
+                                                                            class="col-8 text-left col-form-label">Walking
+                                                                            Floor</label>
+                                                                        <div class="col-4">
+                                                                            <input id="walking_floor"
+                                                                                name="walking_floor" type="number"
+                                                                                value="<%= fleet.trailer.wakingFloor %>"
+                                                                                min="0" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="live_stock"
+                                                                            class="col-8 text-left col-form-label">Live
+                                                                            Stock</label>
+                                                                        <div class="col-4">
+                                                                            <input id="live_stock" name="live_stock"
+                                                                                type="number" min="0"
+                                                                                value="<%= fleet.trailer.liveStock %>"
+                                                                                class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="grain_trailer"
+                                                                            class="col-8 text-left col-form-label">Grain
+                                                                            Trailer</label>
+                                                                        <div class="col-4">
+                                                                            <input id="grain_trailer"
+                                                                                name="grain_trailer" type="number"
+                                                                                value="<%= fleet.trailer.grainTrailer %>"
+                                                                                min="0" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="tipper"
+                                                                            class="col-8 text-left col-form-label">Tipper</label>
+                                                                        <div class="col-4">
+                                                                            <input id="tipper" name="tipper"
+                                                                                type="number" min="0"
+                                                                                value="<%= fleet.trailer.tipper %>"
+                                                                                class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="extendable"
+                                                                            class="col-8 text-left col-form-label">Extendable</label>
+                                                                        <div class="col-4">
+                                                                            <input id="extendable" name="extendable"
+                                                                                type="number"
+                                                                                value="<%= fleet.trailer.extendable %>"
+                                                                                min="0" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="side_tipper"
+                                                                            class="col-8 text-left col-form-label">Side
+                                                                            Tipper</label>
+                                                                        <div class="col-4">
+                                                                            <input id="side_tipper" name="side_tipper"
+                                                                                type="number"
+                                                                                value="<%= fleet.trailer.sideTipper %>"
+                                                                                min="0" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="tanker"
+                                                                            class="col-8 text-left col-form-label">Tanker</label>
+                                                                        <div class="col-4">
+                                                                            <input id="tanker" name="tanker"
+                                                                                type="number" min="0"
+                                                                                value="<%= fleet.trailer.tanker %>"
+                                                                                class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="dog_trailer"
+                                                                            class="col-8 text-left col-form-label">Dog
+                                                                            Trailer</label>
+                                                                        <div class="col-4">
+                                                                            <input id="dog_trailer" name="dog_trailer"
+                                                                                type="number" min="0"
+                                                                                value="<%= fleet.trailer.dogTrailer %>"
+                                                                                class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="horse_float"
+                                                                            class="col-8 text-left col-form-label">Horse
+                                                                            Float</label>
+                                                                        <div class="col-4">
+                                                                            <input id="horse_float" name="horse_float"
+                                                                                type="number" min="0"
+                                                                                value="<%= fleet.trailer.horseFloat %>"
+                                                                                class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="logging"
+                                                                            class="col-8 text-left col-form-label">Logging</label>
+                                                                        <div class="col-4">
+                                                                            <input id="logging" name="logging"
+                                                                                type="number" min="0"
+                                                                                class="form-control"
+                                                                                value="<%= fleet.trailer.logging %>">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="pole_jinker"
+                                                                            class="col-8 text-left col-form-label">Pole
+                                                                            Jinker</label>
+                                                                        <div class="col-4">
+                                                                            <input id="pole_jinker" name="pole_jinker"
+                                                                                type="number" min="0"
+                                                                                class="form-control"
+                                                                                value="<%= fleet.trailer.poleJinker %>">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="pig_trailer"
+                                                                            class="col-8 text-left col-form-label">Pig
+                                                                            Trailer</label>
+                                                                        <div class="col-4">
+                                                                            <input id="pig_trailer" name="pig_trailer"
+                                                                                type="number" min="0"
+                                                                                class="form-control"
+                                                                                value="<%= fleet.trailer.pigTrailer %>">
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-6 mb-2">
+                                                                <a href="#configrations"
+                                                                    class="btn btn-block btn-primary"
+                                                                    data-toggle="collapse">Configrations</a>
+                                                                <div id="configrations" class="collapse">
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="b_double"
+                                                                            class="col-8 text-left col-form-label">B
+                                                                            Double</label>
+                                                                        <div class="col-4">
+                                                                            <input id="b_double" name="b_double"
+                                                                                type="number" min="0"
+                                                                                value="<%= fleet.configrations.bDouble %>"
+                                                                                class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="road_train"
+                                                                            class="col-8 text-left col-form-label">Road
+                                                                            Train</label>
+                                                                        <div class="col-4">
+                                                                            <input id="road_train" name="road_train"
+                                                                                type="number" min="0"
+                                                                                class="form-control"
+                                                                                value="<%= fleet.configrations.roadTrain %>">
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 mb-2">
+                                                                <a href="#other" class="btn btn-block btn-primary"
+                                                                    data-toggle="collapse">Other</a>
+                                                                <div id="other" class="collapse">
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="pilot"
+                                                                            class="col-8 text-left col-form-label">Pilot</label>
+                                                                        <div class="col-4">
+                                                                            <input id="pilot" name="pilot" type="number"
+                                                                                min="0" class="form-control"
+                                                                                value="<%= fleet.other.pilot %>">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="hotshot"
+                                                                            class="col-8 text-left col-form-label">Hotshot</label>
+                                                                        <div class="col-4">
+                                                                            <input id="hotshot" name="hotshot"
+                                                                                type="number" min="0"
+                                                                                class="form-control"
+                                                                                value="<%= fleet.other.hotshot %>">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="ute"
+                                                                            class="col-8 text-left col-form-label">UTE</label>
+                                                                        <div class="col-4">
+                                                                            <input id="ute" name="ute" type="number"
+                                                                                min="0" class="form-control"
+                                                                                value="<%= fleet.other.ute %>">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="depot_facilities"
+                                                                            class="col-8 text-left col-form-label">Depot
+                                                                            Facilities</label>
+                                                                        <div class="col-4">
+                                                                            <input id="depot_facilities"
+                                                                                name="depot_facilities" type="number"
+                                                                                min="0" class="form-control"
+                                                                                value="<%= fleet.other.depotFacilities %>">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="bobtail_operator"
+                                                                            class="col-8 text-left col-form-label">Bobtail
+                                                                            Operator</label>
+                                                                        <div class="col-4">
+                                                                            <input id="bobtail_operator"
+                                                                                name="bobtail_operator" type="number"
+                                                                                min="0" class="form-control"
+                                                                                value="<%= fleet.other.bobtailOperator %>">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="drive_hire"
+                                                                            class="col-8 text-left col-form-label">Drive
+                                                                            Hire</label>
+                                                                        <div class="col-4">
+                                                                            <input id="drive_hire" name="drive_hire"
+                                                                                type="number" min="0"
+                                                                                class="form-control"
+                                                                                value="<%= fleet.other.driveHire %>">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row p-1">
+                                                                        <label for="trade_plates"
+                                                                            class="col-8 text-left col-form-label">Trade
+                                                                            Plates</label>
+                                                                        <div class="col-4">
+                                                                            <input id="trade_plates" name="trade_plates"
+                                                                                type="number" min="0"
+                                                                                class="form-control"
+                                                                                value="<%= fleet.other.tradePlates %>">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <button type="submit"
+                                                            class=" btn btn-primary  fleet-button mt-2">Update Fleets</button>
+                                                    </form>
+
+                                                </div>
+                                                <div class="tab-pane container fade" id="alert">
+
+                                                    <form id="carrier-alert-form">
+
+                                                        <div class="row alert">
+                                                            <div class="col-12 mb-3">
+                                                                <h3 class="text-center">Recieve Job Alerts</h3>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="card shadow">
+                                                                    <div class="card-body">
+                                                                        <h5>Mobile</h5>
+                                                                        <p>Recieve Job Alerts via message.</p>
+                                                                        <div class="custom-control custom-switch">
+                                                                            
+                                                                            <input type="checkbox"
+                                                                                class="custom-control-input"
+                                                                                id="mobile-alert">
+                                                                            <label class="custom-control-label"
+                                                                                for="mobile-alert"
+                                                                                name="mobile_alert">Enable Alerts for
+                                                                                Mobile</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="card shadow">
+                                                                    <div class="card-body">
+                                                                        <h5>Email</h5>
+                                                                        <p>Recieve Job Alerts via Email.</p>
+                                                                        <div class="custom-control custom-switch">
+                                                                            <input type="checkbox"
+                                                                                class="custom-control-input"
+                                                                                id="email-alert">
+                                                                            <label class="custom-control-label"
+                                                                                for="email-alert"
+                                                                                name="email_alert">Enable Alerts for
+                                                                                Email</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <script>
+
+                                                                var mobile = '<%= alerts.mobile %>';
+                                                                var email = '<%= alerts.email %>'
+
+                                                                if (mobile === 'true') {
+                                                                    $('#mobile-alert').attr('checked', true)
+                                                                } 
+                                                                if (email === 'true') {
+                                                                    $('#email-alert').attr('checked', true)
+
+                                                                }
+                                                            </script>
+                                                        </div>
+
+                                                        <button type="submit" name="next"
+                                                            class="btn btn-primary mt-3 mb-3 alert-button"
+                                                            value="button">Update Alerts</button>
+
+                                                    </form>
+
+                                                </div>
+                                                <div class="tab-pane container fade" id="subscribe">
+                                                    <form id="payment-form">
+                                                        
+                                                        <div class="row">
+                                                            <div class="col-12 mt-2">
+                                                                <span>Your Selected Plan <span class="text-danger"><%= subscription.plan %> </span> <%= subscription.plan === 'Free' ? '': '$' %></span><br>
+                                                                <span>Plan Expires In <span class="text-danger"><%= new Date(subscription.expiration).toDateString() %> </span> </span>
+                                                                    
+                                                            </div>
+                                                            <div class="col-12">
+                                                    
+                                                                <select name="plan" class="custom-select plans mt-2">
+                                                                    <option disabled selected>Choose your Best Plan</option>                                                        
+                                                                    <option value="79">1 Month/ 79$</span></option>
+                                                                    <option value="250">3 Months/ 250$</span></option>
+                                                                    <option value="500">6 Months/ 500$</span></option>
+                                                                    <option value="750">12 Months/ 750$</span></option>
+                                                                </select>
+                                                                
+                                                    
+                                                                <div class="stripe-container mt-3">
+                                                                    <div id="card-element">
+                                                                        <!-- Elements will create input elements here -->
+                                                                    </div>
+                                                    
+                                                                    <!-- We'll put the error messages in this element -->
+                                                                    <div id="card-errors" role="alert"></div>
+                                                    
+                                                                </div>
+                                                    
+                                                            </div>
+                                                           
+                                                        </div>
+                                                    
+                                                    
+                                                        <button type="submit" id="submit" class="btn btn-primary mt-3 mb-3 subscribe-button" value="button">Update Subscription</button>
+                                                
+                                                    </form>
+                                                    
+                                                </div>
+                                                <div class="tab-pane container fade" id="Password">
+
+                                                    <form id="carrier-password-form">
+                                                        <div class="row alert">
+                                                            <div class="col-12 mb-3">
+                                                                <h3 class="text-center">Update your password</h3>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="card shadow">
+                                                                    <div class="form-group">
+                                                                        <label for="newPassword"
+                                                                            class="col-sm-8   col-form-label">Email _id</label>
+                                                                        <div class="col-sm-4">
+                                                                            <input id="email"
+                                                                                name="email" type="text"
+                                                                                value=""
+                                                                                min="0" class="form-control">
+                                                                        </div>
+                                                                        <label for="newPassword"
+                                                                            class="col-sm-8   col-form-label">New Password</label>
+                                                                        <div class="col-sm-4">
+                                                                            <input id="newPassword"
+                                                                                name="newPassword" type="password"
+                                                                                value=""
+                                                                                min="0" class="form-control">
+                                                                        </div>
+                                                                        <button type="submit"
+                                                            class="btn btn-primary  Password-button m-3">Update Password</button>
+                                                                    </div>
+                                                                    
+                                                                 </div>
+                                                            </div>   
+                                                        </div>
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <script src="/public/assets/js/profile/update-carrier-subscription.js"></script>
+
+                            <% } %>
+
+                            <div class="col-12 mt-3 mb-2">
+                                <div class="card shadow">
+                                    <div class="card-body">
+                                        <h4 class="mt-0 header-title mb-4">Your Stats</h4>
+                                        <% if (user.role === 'Shipper') { %>
+                                        <div class="clearfix mb-3">
+                                            <div class="float-left">
+                                                Total Jobs Posts
+                                            </div>
+                                            <div class="float-right">
+                                                <span class="border p-1 pl-2 pr-2  rounded-circle bg-primary"><%= stats ?  stats.JobsPost : 0 %></span>
+                                            </div>
+                                        </div>
+                                        <% } %>
+                                        <div class="clearfix mb-3">
+                                            <div class="float-left">
+                                                Total Jobs Done
+                                            </div>
+                                            <div class="float-right">
+                                                <span class="border p-1 pl-2 pr-2  rounded-circle bg-primary"><%= stats ? stats.jobsDone: 0 %></span>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="clearfix mb-3">
+                                            <div class="float-left">
+                                                Jobs In Progress
+                                            </div>
+                                            <div class="float-right">
+                                                <span class="border p-1 pl-2 pr-2  rounded-circle bg-primary"><%= stats ?  stats.jobsInProgress: 0 %></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-2">
+                            <div class="col-12">
+                                <div class="card shadow">
+                                    <div class="card-body">
+                                        <h4 class="mt-0 header-title mb-4"><%= user.role === 'Shipper' ? 'Your Posts': 'Your Jobs' %></h4>
+                                        <table id="team" class="display table " width="100%"></table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="modal" id="addProfile">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <% if(user.profilePic){ %>
+            <h4 class="modal-title">Update Profile Image</h4>
+            <% } else { %>
+                <h4 class="modal-title">Add Profile Image</h4>
+                <% } %>
+          
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+        <form id="profile-pic-form" enctype="multipart/form-data">
+            <div class="form-group mt-1 mb-1 preview-container" style="text-align: center;">
+                <img src="" id="preview" class="h-40 w-40">
+            </div>
+
+            <div class="custom-file mb-1 mt-3">
+                <input type="file" class="custom-file-input" name="file" id="file" required>
+                <label class="custom-file-label" for="File">Upload Photo</label>
+            </div>
+            <div class="form-group mt-3 mb-5">
+                <% if(user.profilePic){ %>
+                    <button class="btn btn-primary text-dark add-profile-pic" type="submit">Update</button>
+                    <% } else { %>
+                        <button class="btn btn-primary text-dark add-profile-pic" type="submit">Add Profile </button>
+                        <% } %>
+                
+            </div>
+        </form>
+        </div>
+      
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+<script src="/public/assets/js/update-shipper.js"></script>
+<script src="/public/assets/js/profile/update-carrier-profile.js"></script>
+<script src="/public/assets/js/profile/update-carrier-fleet.js"></script>
+<script src="/public/assets/js/profile/update-carrier-alert.js"></script>
+<script src="/public/assets/js/profile/addUpdate-profile-pic.js"></script>
+
+
+<link rel="stylesheet" href="/public/assets/css/profile.css">
+<link rel="stylesheet" href="/public/plugins/datatables/datatable.css">
+<script src="/public/plugins/datatables/datatable.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.scrollto/2.1.2/jquery.scrollTo.min.js"></script>
+<script src="/public/assets/js/post-jobs.js"></script>
+
+
+<% include ../Partials/FooterLink  %>
+<% include ../Partials/Footer %>
+<% include ../Partials/FooterRoot  %>

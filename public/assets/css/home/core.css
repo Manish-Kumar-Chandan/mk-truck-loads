@@ -1,0 +1,10 @@
+.core_desc {
+    padding: 5px 10em;
+}
+
+@media screen and (max-width:500px) {
+    .core_desc {
+        padding: 5px 2em;
+    }
+    
+}

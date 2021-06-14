@@ -1,0 +1,56 @@
+.slider {   
+    background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url('../../images/gallery/slider-2.jpg');
+    height: 40em;
+    background-size: cover;
+}
+
+.banner {
+    position: absolute;
+    bottom: 0;
+}
+
+.wrapper h2, .wrapper h3 {
+    text-shadow: 1.5px 1.5px lightgrey;
+}
+
+
+.faq-container #accordion .card {
+    border:none !important;
+    margin-bottom:0.5em;
+}
+
+
+.card-header {
+    border-radius: 10em !important;
+
+}
+
+.logos {
+    padding: 8px;
+    background: black;
+    border-radius: 25%;
+}
+
+.card-link {
+    display: block;
+}
+
+.card-header:hover {
+    background-color: black !important;
+}
+
+.faq-container .card-header:hover .card-link {
+    color: #F7DC5F !important;
+
+}
+
+.image {
+    height: 400px !important;
+    box-shadow: 0px 3px 40px 0px lightgrey;
+}
+
+
+.image:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s;
+}

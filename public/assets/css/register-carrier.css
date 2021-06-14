@@ -1,0 +1,108 @@
+#signup-form fieldset {
+	background: white;
+	border: 0 none;
+	border-radius: 3px;
+	/* box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4); */
+	
+	box-sizing: border-box;
+	width: 100%;
+	
+	/*stacking fieldsets above each other*/
+	/* position: absolute; */
+}
+/*Hide all except first fieldset*/
+#signup-form fieldset:not(:first-of-type) {
+	display: none;
+}
+/*inputs*/
+#signup-form input, #signup-form textarea {
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	/* width: 100%; */
+	box-sizing: border-box;
+	font-family: montserrat;
+	font-size: 15px;
+}
+/*buttons*/
+#signup-form .action-button {
+	width: 100px;
+	background: #F7DC5F;
+	color: #03060D;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 10px 5px;
+}
+#signup-form .action-button:hover, #signup-form .action-button:focus {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #F7DC5F;
+}
+
+/*progressbar*/
+#progressbar {
+	margin-bottom: 30px;
+	overflow: hidden;
+    width:100%;
+    padding: 0px;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+}
+#progressbar li {
+	list-style-type: none;
+	color: #03060D;
+	text-transform: uppercase;
+	font-size: 12px;
+    width: 24%;
+    margin-left:3px;
+    border: 1px solid #F7DC5F;
+	float: left;
+	position: relative;
+    padding: 5px 0px;
+}
+#progressbar li::before {
+	content: counter(step);
+	counter-increment: step;
+	line-height: 20px;
+	display: inline;
+    padding: 5px 8px;
+	font-size: 10px;
+	color: #03060D;
+	background: #F7DC5F;
+	border-radius: 45%;
+    margin: 15px;
+}
+
+/*progressbar connectors*/
+
+#progressbar li:first-child::after {
+	/*connector not needed before the first step*/
+	content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active {
+	background: #F7DC5F;
+    color: #03060D;
+    border:1px solid #fff;
+    /* box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4); */
+}
+
+#progressbar li.active::before {
+	background: #03060D;
+	color: #F7DC5F;
+}
+
+.btn-rimary:hover {
+	color: #03060D !important;
+}
+
+@media screen and (max-width: 768px) {
+    #progressbar li::before {
+        display:  none !important;
+    }
+    #progressbar li {
+        text-align:  center;
+    }
+}

@@ -1,0 +1,46 @@
+td.details-control {
+    background: url('/public/assets/icons/details_open.png') no-repeat center center;
+    cursor: pointer;
+}
+tr.shown td.details-control {
+    background: url('/public/assets/icons/details_close.png') no-repeat center center;
+}
+tr {
+    height: 3.5em !important;
+}
+
+.pl-1-5 {
+    padding-left:  7px !important;
+}
+
+.pr-1-5 {
+    padding-right: 7px !important;
+}
+
+thead tr {
+    height: 0px !important;
+}
+
+
+
+.carrier-card {
+    height: 650px;
+    max-height: 800px !important;
+    overflow: auto;
+}
+
+#carrier-Modal .modal-dialog{
+    max-width: 80%;
+}
+
+
+#carrier-Modal .modal-body {
+    max-height: 70vh !important;
+
+}
+
+@media screen and (max-width: 576px) {
+    .carrier-Modal .modal-dialog {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,51 @@
+.bg-dark {
+    background-color: #03060D !important;
+}
+
+.load-card {
+    overflow: auto;
+    height: 405px;
+}
+
+.earning-graph {
+    height: 300px;
+}
+
+.table.dataTable tbody td{
+    padding: 12px 10px !important;
+}
+
+.client-review {
+    max-height: 19em;
+    min-height: 19em;
+}
+
+
+.activity-card {
+    max-height: 35em;
+    min-height: 35em;
+}
+
+
+.booking-card {
+    height: 600px !important;
+    max-height: 45em;
+    min-height: 25em;
+}
+
+thead tr {
+    height: 0px !important;
+}
+
+.team-card {
+    height: 570px !important;
+    margin-bottom: 2em;
+    overflow: auto;
+}
+
+
+@media screen and (max-width: 576px){
+    .modal-dialog {
+        max-width: 100%;
+    }
+}

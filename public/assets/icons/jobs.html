@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>Truck Loads</title>
+        <meta content="Truck Loads" name="description" />
+        <meta content="Truck Loads" name="author" />
+        <link rel="shortcut icon" href="/public/assets/images/favicon.ico">
+
+        <link href="/public/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="/public/assets/css/metismenu.min.css" rel="stylesheet" type="text/css">
+        <link href="/public/assets/css/icons.css" rel="stylesheet" type="text/css">
+        <link href="/public/assets/css/style.css" rel="stylesheet" type="text/css">
+        
+    </head>
+
+    <body>
+<header id="topnav">
+    <div class="topbar-main">
+        <div class="container-fluid p-0">
+
+            <div class="logo">
+                <a href="index" class="logo">
+                    <img src="/public/assets/images/logo-light.svg" alt="" class="logo-small">
+                    <img src="/public/assets/images/logo-light.svg" alt="hvh" class="logo-large" height="50" width="80">
+                </a>
+            </div>
+
+            <div class="menu-extras topbar-custom">
+                <ul class="navbar-right list-inline float-right mb-0 ">
+                    <!-- notification -->
+                    <li class="dropdown notification-list list-inline-item km-container">
+                        <h3 class="text-primary">189,105 Km</h3>
+                        <span class="small text-primary"
+                            style="position: absolute; margin-top: -10px; width: 110%;">Transport in last 24
+                            hrs
+                        </span>
+                    </li>
+                    <li class="dropdown notification-list list-inline-item">
+                        <div class="dropdown notification-list nav-pro-img">
+                            <a class="dropdown-toggle nav-link arrow-none nav-user" data-toggle="dropdown" href="#"
+                                role="button" aria-haspopup="false" aria-expanded="false">
+                                <button type="button"
+                                    class="btn btn-primary p-2 pl-3 pr-3">Login <i
+                                        class="ti-user"></i> </button>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right profile-dropdown bg-dark">
+                                <!-- <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle m-r-5"></i>
+                                    Profile</a>
+                                <a class="dropdown-item" href="#"><i class="mdi mdi-wallet m-r-5"></i> My Wallet</a>
+                                <a class="dropdown-item d-block" href="#"><span
+                                        class="badge badge-success float-right">11</span><i
+                                        class="mdi mdi-settings m-r-5"></i> Settings</a>
+                                <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline m-r-5"></i> Lock
+                                    screen</a>
+                                <div class="dropdown-divider"></div> -->
+                                <a class="dropdown-item text-primary bg-dark" href="/login"><i
+                                        class="mdi mdi-power text-primary"></i> Logout</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="menu-item list-inline-item">
+                        <!-- Mobile menu toggle-->
+                        <a class="navbar-toggle nav-link">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+                        <!-- End mobile menu toggle-->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar-custom">
+        <div class="container-fluid">
+            <div id="navigation">
+               
+                <!-- Menu Start -->
+                <ul class="navigation-menu">
+                    <li class="has-submenu">
+                        <a href="/home"><i class="ti-home"></i>Home</a>
+                    </li>
+                    <!-- <li class="has-submenu">
+                        <a href="/pricing"><i class="ti-money"></i>Pricing</a>
+                    </li> -->
+                    <li class="has-submenu">
+                        <a href="/how-it-work"><i class="ti-pencil"></i>How It Works</a>
+                        <ul class="submenu megamenu">
+                            <li>
+                                <ul>
+                                    <li><a href="/how-it-work/advertisment">Advertisment</a></li>
+                                    <li><a href="/how-it-work/faq">FAQ</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#"><i class="ti-package"></i>Get A Quote</a>
+                        <ul class="submenu megamenu">
+                            <li>
+                                <ul>
+                                    <li><a href="/get-a-quote/cars">Cars Transport</a></li>
+                                    <li><a href="/get-a-quote/bike">Bikes Transport</a></li>
+                                    <li><a href="/get-a-quote/furniture">Furniture Transport</a></li>
+                                    <li><a href="/get-a-quote/boat">Boat Transport</a></li>
+                                    <li><a href="/get-a-quote/home">Home Transport</a></li>
+                                    <li><a href="/get-a-quote/pallets">Pallets Transport</a></li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li><a href="/get-a-quote/waste">Waste Transport</a></li>
+                                    <li><a href="/get-a-quote/trucks">Trucks Transport</a></li>
+                                    <li><a href="/get-a-quote/vehicle">other vehicles Transport</a></li>
+                                    <li><a href="/get-a-quote/container">Container Transport</a></li>
+                                    <li><a href="/get-a-quote/houlage">Houlage Transport</a></li>
+                                    <li><a href="/get-a-quote/livestock">Pets & Livestock Transport</a></li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li><a href="/get-a-quote/heavy">Heavy Transport</a></li>
+                                    <li><a href="/get-a-quote/furniture">Agriculture Transport</a></li>
+                                    <li><a href="/get-a-quote/machine">Machine Transport</a></li>
+                                    <li><a href="/get-a-quote/automotive">Automaotive Transport</a></li>
+                                    <li><a href="/get-a-quote/regrigrated">Refrigrated Transport</a></li>
+                                    <li><a href="/get-a-quote/other">other Generals </a></li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="/jobs"><i class="ti-desktop"></i>Jobs</a>
+                    </li>
+                </ul>
+                <!-- menu end -->
+
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<div class="wrapper ">
+    <div class="alert bg-primary alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Coronavirus (COVID-19) Update</strong> Truck Loads is Open for business.
+  </div>
+    <!-- <div class="row pl-2 pr-2">
+        <div class="col-12 slider">
+            <div class="container">
+                <h1 class="text-primary banner">Jobs</h1>
+            </div>
+        </div>
+    </div> -->
+    <!-- <div class="container">
+
+
+
+        <div class="row mt-5 mb-5">
+            
+            <div class="col-md-12 ">
+               
+                <div class="clearfix">
+                    <div class="float-left">
+                        <div class="dropdown">
+                            <button type="button"  class="btn btn-primary dropdown-toggle " data-toggle="dropdown">
+                              FIlter Jobs
+                            </button>
+                            <div class="dropdown-menu ml-3" >
+                                <div class="row bg-dark ">
+                                    <form>
+                                        <div class="col-12  pl-4">
+                                            <h6>Categories</h6>
+                                            <span class="small text-primary select" >Select All</span>
+                                            <hr>
+                                            
+                                        </div>
+                                    </form>
+                                    
+                                </div>   
+                             
+                            </div>
+                          </div>
+                    </div>
+                    <div class="float-right">
+                        <form >
+                            <div class="form-group">
+                              <select class="form-control bg-dark text-primary" id="sel1" name="sellist1">
+                                <option disabled>Sort</option>
+                                <option>Recent Date</option>
+                                <option>Expiry Soonest</option>
+                                <option>Quote (Most)</option>
+                                <option>Quote (Least)</option>
+                                <option>Distance (Greatest)</option>
+                                <option>Distance (Least)</option>
+                              </select>
+                              <br>
+                            </div>
+                          </form>
+                    </div>
+
+                </div>                
+                <div id="accordion">
+                    <div class="card ">
+                      <div class="card-header bg-dark " data-toggle="collapse" href="#collapseOne">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <img src="/public/assets/images/gallery/work-7.jpg" class="h-100 w-100">
+                            </div>
+                            <div class="col-sm-7">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <span class="category small">Cars</span><br>
+                                        <h6 class="text-primary font-weight-lighter">Poly Water Tank</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <img class="mr-3" src="/public/assets/icons/placeholder.svg"> Sydney NSW 250<br>
+                                        <div class="border rounded text-dark bg-primary w-100 mt-3 text-center">22 May - 30 May</div>
+                                    </div>
+                                    <div class="col-6">
+                                        <img class="mr-3" src="/public/assets/icons/placeholder-red.svg"> Sydney NSW 250<br>
+                                        <div class="border rounded text-dark bg-primary w-100 mt-3 text-center">22 May - 30 May</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <span >Karth1985</span><i class="ti-user ml-2 mr-2 border border-primary rounded-circle p-2"></i><br>
+                                <span class="small">1 month ago</span> <br>
+                                <span class="">24$ - 30$</span> <br>
+
+                            </div>
+
+                        </div>
+                      </div>
+                      <div id="collapseOne" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                          Lorem ipsum..
+                        </div>
+                      </div>
+                    </div>
+                   
+                    
+                   
+            </div>
+        </div>
+    </div> -->
+
+
+
+    <div class="container">
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+          </div>
+          
+          <h2>Animated Sidenav Example</h2>
+          <p>Click on the element below to open the side navigation menu.</p>
+          <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+          
+    </div>
+
+
+
+
+
+
+
+
+</div>
+
+
+<div class="row bg-dark mb-30 ">
+    <div class="col-12 link_desc">
+        <!-- <div class="row">
+            <div class="col-md-4">
+                <div>
+                    <h4 class="font-weight-lighter">Truck Loads</h4>
+                    <p class="mt-3" >Nemo enim enim voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequ magni dolores eos qui ratione voluptatem.</p>
+                </div>
+                <div>
+                    <i class="ti-facebook text-primary border border-primary rounded-circle p-2"></i>
+                    <i class="ti-linkedin text-primary border border-primary rounded-circle p-2"></i>
+                    <i class="ti-youtube text-primary border border-primary rounded-circle p-2"></i>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h4 class="font-weight-lighter">Quick Links</h4>
+                <hr>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="list-style2 list-group">
+                            <li class="list-group-item  border-0 "><a href="/home">Home</a></li>
+                            <li class="list-group-item border-0"><a href="/how-it-work/advertisment">Advertisement</a></li>
+                            <li class="list-group-item border-0"><a href="/how-it-work/faq">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list-style2 list-group">
+                            <li class="list-group-item  border-0 "><a href="/pricing">Pricing</a></li>
+                            <li class="list-group-item border-0"><a href="/jobs">Jobs</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <h4 class="font-weight-lighter">Get in Touch</h4>
+                <hr>
+                <ul class="list-group">
+                    <li class="list-group-item  border-0 "><i class="fas fa-map-marker-alt text-primary "></i> location</li>
+                    <li class="list-group-item  border-0 "><i class="fas fa-mobile-alt text-primary"></i> 745-554-6464</li>
+                    <li class="list-group-item  border-0 "><i class="far fa-envelope text-primary"></i> www.truckloads.net.com</li>
+
+                </ul>
+
+            </div>
+
+        </div> -->
+        <div class="row pb-5 text-center">
+            <div class="col-sm-4 ">
+                <h3 class="font-weight-lighter">Phone</h3>
+                <div class="d-flex justify-content-center">
+                    <span class="text-underline"></span>
+                </div><br>
+                <span>(+44) 123 456 789</span>
+            </div>
+            <div class="col-sm-4">
+                <h3 class="font-weight-lighter">Email</h3>
+                <div class="d-flex justify-content-center">
+                    <span class="text-underline"></span>
+                </div><br>
+                <span>example@email.com</span>
+
+            </div>
+            <div class="col-sm-4">
+                <h3 class="font-weight-lighter">Location</h3>
+                <div class="d-flex justify-content-center">
+                    <span class="text-underline"></span>
+                </div><br>
+                <span>74, Guild Street</span>
+
+            </div>
+            <div class="col-12 mt-4 mb-4 bg-white line"></div>
+            <div class="col-12 mt-3">
+                <i class="ti-facebook text-primary  p-2"></i>
+                <i class="ti-twitter text-primary  p-2"></i>
+                <i class="ti-google text-primary  p-2"></i>
+                <i class="ti-linkedin text-primary  p-2"></i>
+            </div>
+        </div>
+       
+    </div>
+</div>
+
+</div>
+<style>
+    .link_desc {
+        padding: 5px 10em;
+    }
+
+    .mb-30 {
+    margin-bottom: -30px
+
+    }
+
+
+    .bg-dark {
+        background: #03060D !important;
+        color: #F7DC5F;
+    }
+
+    .list-group-item {
+        background-color: transparent !important;
+    }
+
+    .text-underline {
+        height:2px; width:80px; background-color: #F7DC5F;
+    }
+
+    .line {
+        height: 0.5px;
+    }
+
+    .border-primary {
+        border-color: #F7DC5F !important;
+    }
+
+    .ul  li{
+        background-color: transparent;
+    }
+
+    .list-style2 li:before { 
+    margin-left: -20px;
+    margin-right: 10px;
+    content: '';
+    position: absolute;
+    margin-top:8px;
+    width: 8px;
+    height: 8px;
+    background: #F7DC5F;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    z-index: 2;
+    transform: rotate(45deg);
+}
+
+.fas , .far {
+    margin-left: -6% !important;
+}
+
+@media screen and (max-width:991px) {
+    .link_desc {
+        padding: 5px 2em;
+    }
+    
+}
+
+</style>
+<footer class="footer p-2 " style="background-color: #03060D">
+                <div class="row ">
+                       <div class="col-12 text-center">
+                                &#169; Power by Dcube Technologies 
+                       </div>
+                </div>
+</footer>
+<script src="/public/assets/js/jquery.min.js"></script>
+<script src="/public/assets/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="/public/assets/js/metisMenu.min.js"></script> -->
+<script src="/public/assets/js/jquery.slimscroll.js"></script>
+<script src="/public/assets/js/waves.min.js"></script>
+
+<!-- countdown -->
+<script src="/public/plugins/countdown/jquery.countdown.min.js"></script>
+<!-- <script src="/public/assets/pages/countdown.int.js"></script> -->
+<!-- App js -->
+<script src="/public/assets/js/app.js"></script>
+
+</body>
+</html>
+
+<link rel="stylesheet" href="/public/assets/css/jobs.css">
+<script src="/public/assets/js/jobs.js"></script>
+
+<style>
+
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+<script>
+    function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>

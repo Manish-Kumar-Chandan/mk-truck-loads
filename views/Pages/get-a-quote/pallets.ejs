@@ -1,0 +1,40 @@
+<% include ./category %>
+
+<div class="pallets-size-container">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group mb-1">
+                <label for="availibility">Size:</label>
+                <select id="availability" class="form-control" name="availibility">
+                    <option selected="selected" value="0">Standard</option>
+                    <option value="1">Euro 1000</option>
+                    <option value="3">Euro 80</option>
+                    <option value="4">Mon Standard</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group mb-1 ">
+                <label for="quantity">Quantity</label>
+                <input class="form-control" type="number" name="quantity" min="0" placeholder="0" id="quantity">
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="custom-control mb-2 mt-2 custom-switch">
+                <input type="checkbox" class="custom-control-input" id="secured">
+                <label class="custom-control-label" for="secured" name="secured">Item secured to Pallets?</label>
+              </div>
+            
+              
+             <div class="custom-control mb-2 mt-2 custom-switch">
+                <input type="checkbox" class="custom-control-input" id="lift">
+                <label class="custom-control-label" for="lift" name="lift">Required a Tailgate?</label>
+              </div>
+            
+            
+        </div>
+    </div>
+    
+</div>
+
+<% include ./measure %>

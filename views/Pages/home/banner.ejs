@@ -1,0 +1,90 @@
+<div class="row">
+    <div class="col-12 slider text-center">
+        <div class=" mt-5 mb-5  ">
+            <h2 class="text-primary">
+                <span class="font-weight-lighter">Move And Store</span> anything, anywhere <span
+                    class="font-weight-lighter">with</span><br>
+                <span class="font-weight-lighter">Australia's No.1 “Leading Market Place For Transport & Warehouse Solutions.</span>
+            </h2>
+            <h5 class="font-italic text-primary mt-3">Hundreds of thousands <span class="font-weight-lighter">of jobs
+                    have been moved safely and securely with truckloads.net</span> </h5>
+        </div>
+        <% if (user && user.role === 'Shipper') { %>
+        <div class="d-flex justify-content-center">
+            <div class="moving-form rounded">
+                <form>
+                    <div class="row  form-conatiner shadow-lg">
+                        <div class="col-lg-4 mb-2">
+                            <div class="input-group h-100">
+                                <div class="input-group-prepend">
+                                    <button class="btn p-2" type="button">
+                                        <img class="hookup_logo" src="/public/assets/icons/hookup.svg">
+                                    </button>
+                                </div>
+                                <select class="form-control h-100" id="sel1">
+                                    <option value="">What are you moving?</option>
+                                    <option value="get-a-quote/cars">Cars</option>
+                                    <option value="get-a-quote/pallets-and-packages">Pallets and Packages</option>
+                                    <option value="get-a-quote/furniture-and-household">Furniture &amp; Household
+                                    </option>
+                                    <option value="get-a-quote/motorcycles">Motorcycles</option>
+                                    <option value="get-a-quote/boats">Boats</option>
+                                    <option value="get-a-quote/moving">Moving Home or Office</option>
+                                    <option value="get-a-quote/motorhomes">RV's, Caravans and Trailers</option>
+                                    <option value="get-a-quote/other-vehicles">Other Vehicles</option>
+                                    <option value="get-a-quote/haulage">Haulage</option>
+                                    <option value="get-a-quote/containers">Shipping Containers</option>
+                                    <option value="get-a-quote/oversize">Oversize</option>
+                                    <option value="get-a-quote/automotive">Auto Parts, Spares &amp; Tyres</option>
+                                    <option value="get-a-quote/agriculture">Agriculture Commodities</option>
+                                    <option value="get-a-quote/mining-construction-farm">Mining, Construction and
+                                        Farm Machinery</option>
+                                    <option value="get-a-quote/pets-and-livestock">Livestock and Pets</option>
+                                    <option value="get-a-quote/refrigerated">Refrigerated</option>
+                                    <option value="get-a-quote/waste">Waste Disposal</option>
+                                    <option value="get-a-quote/other-general">Other General</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 text-left mb-2">
+                            <div class="input-group h-100">
+                                <div class="input-group-prepend">
+                                    <button class="btn " type="button">
+                                        <img class="hookup_logo" src="/public/assets/icons/placeholder.svg">
+                                    </button>
+                                </div>
+                                <input type="text" class="form-control h-100" id="pickup-auto-complete" placeholder="Pickup Suburb">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 text-left mb-2">
+                            <div class="input-group h-100">
+                                <div class="input-group-prepend">
+                                    <button class="btn " type="button">
+                                        <img class="hookup_logo" src="/public/assets/icons/placeholder-red.svg">
+                                    </button>
+                                </div>
+                                <input type="text" class="form-control h-100" id="delivery-auto-complete" placeholder="Delivery Suburb">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-2 center mb-2">
+                            <button type="submit" class="btn btn-primary text-dark get-a-quote h-100">Get a
+                                Quote</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+        <% } %>
+        <!-- <div class="text-white track-button-container">
+            <a href="track-order" type="button"  class="btn btn-primary track-button rounded-circle p-3 font-weight-bolder">
+                Track 
+            </a>
+        </div> -->
+    </div>
+    
+</div>
+
+<link rel="stylesheet" href="/public/assets/css/home/banner.css">
+<script src="/public/assets/js/auto-complete.js"></script>

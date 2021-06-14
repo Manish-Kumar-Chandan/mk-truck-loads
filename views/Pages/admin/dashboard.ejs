@@ -1,0 +1,455 @@
+<% include ./overview %>
+
+<div class="row  mt-3">
+    <div class="col-xl-9 mb-2">
+        <div class="card earning-card">
+            <div class="card-body">
+                <div class="clearfix">
+                    <div class="float-left">
+                        <h4 class="mt-0 header-title mb-5">Monthly Earning</h4>
+                    </div>
+                    <div class="float-right">
+                        <a href="/admin/passbook" type="button" class="btn btn-primary text-dark btn-sm">Passbook</a>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-xl-7 earning-graph">
+                        <div>
+                            <div id="chart-with-area" class="ct-chart earning ct-golden-section"></div>
+                        </div>
+                    </div>
+                    <div class="col-xl-5">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="text-center">
+                                    <p class="text-muted mb-4">This month</p>
+                                    <h4>$34,252</h4>
+                                    <p class="text-muted mb-5">Truck Loads Earning This Month.</p>
+                                    <span class="peity-donut"
+                                        data-peity='{ "fill": ["#F7DC5F", "#f2f2f2"], "innerRadius": 28, "radius": 32 }'
+                                        data-width="72" data-height="72">4/5</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="text-center">
+                                    <p class="text-muted mb-4">Last month</p>
+                                    <h4>$36,253</h4>
+                                    <p class="text-muted mb-5">Truck Loads Earning Last Month.</p>
+                                    <span class="peity-donut"
+                                        data-peity='{ "fill": ["#F7DC5F", "#f2f2f2"], "innerRadius": 28, "radius": 32 }'
+                                        data-width="72" data-height="72">3/5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 mb-2">
+        <% include ./load-analysis %>
+    </div>
+
+</div>
+
+<!-- End Row -->
+
+
+
+<div class="row  mt-3 ">
+
+    <!-- On Going Shipments -->
+    <div class="col-xl-7">
+        <div class="card activity-card slimscroll">
+            <div class="card-body">
+                <h4 class=" header-title mb-4">On Going Shipments</h4>
+                <ol class="activity-feed mb-0 ">
+                    <li class="feed-item">
+                        <div class="feed-item-list">
+                            <span class="date">july 22 20</span>
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <span class="activity-text">Cars <span
+                                                    class="small">(category)</span></span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <span class="activity-text">Bryan <span
+                                                    class="small">(shipper)</span></span>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <span class="activity-text">Peterbilt Co <span
+                                                    class="small">(carrier)</span></span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-3 text-right">
+                                    <a href="/admin/shipment/45"><i class='fa fa-eye '></i></a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="feed-item">
+                        <div class="feed-item-list">
+                            <span class="date">july 22 20</span>
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <span class="activity-text">Cars <span
+                                                    class="small">(category)</span></span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <span class="activity-text">Bryan <span
+                                                    class="small">(shipper)</span></span>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <span class="activity-text">Peterbilt Co <span
+                                                    class="small">(carrier)</span></span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-3 text-right">
+                                    <a href="/admin/shipment/45"><i class='fa fa-eye '></i></a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="feed-item">
+                        <div class="feed-item-list">
+                            <span class="date">july 22 20</span>
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <span class="activity-text">Bike<span class="small">(category)</span></span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <span class="activity-text">Bryan <span
+                                                    class="small">(shipper)</span></span>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <span class="activity-text">Peterbilt Co <span
+                                                    class="small">(carrier)</span></span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-3 text-right">
+                                    <a href="/admin/shipment/45"><i class='fa fa-eye '></i></a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="feed-item">
+                        <div class="feed-item-list">
+                            <span class="date">july 22 20</span>
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <span class="activity-text">Boat <span
+                                                    class="small">(category)</span></span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <span class="activity-text">Bryan <span
+                                                    class="small">(shipper)</span></span>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <span class="activity-text">Peterbilt Co <span
+                                                    class="small">(carrier)</span></span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-3 text-right">
+                                    <a href="/admin/shipment/45"><i class='fa fa-eye '></i></a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="feed-item">
+                        <div class="feed-item-list">
+                            <span class="date">july 22 20</span>
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <span class="activity-text">pallets <span
+                                                    class="small">(category)</span></span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <span class="activity-text">Bryan <span
+                                                    class="small">(shipper)</span></span>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <span class="activity-text">Peterbilt Co <span
+                                                    class="small">(carrier)</span></span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-3 text-right">
+                                    <a href="/admin/shipment/45"><i class='fa fa-eye '></i></a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+                <div class="text-center">
+                    <a href="#" class="btn btn-primary text-dark">Load More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- On Going Shipments -->
+
+
+    <!-- Reviews -->
+
+    <div class="col-xl-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card text-center">
+                    <div class="card-body bg-dark">
+                        <div class="">
+                            <div class="text-center text-primary py-4">
+                                <h5 class="mt-0 mb-4 tet-dark-50 font-16">Total Bookings</h5>
+                                <h1>1452</h1>
+                                <p>Bookings This Month</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <div class="card bg-primary shadow">
+                    <div class="card-body">
+                        <div class="text-center tet-dark py-4">
+                            <h5 class="mt-0 mb-4 tet-dark-50 font-16"><a href="/admin/carriers">Vehicles</a></h5>
+                            <h1><a href="/admin/carriers">1452</a></h1>
+                            <p>vehicles are Available</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card client-review">
+                    <div class="card-body">
+                        <h4 class="mt-0 header-title mb-4">Client Reviews</h4>
+
+                        <div id="owl-demo" class="owl-carousel owl-theme">
+                            <div class="item">
+                                <p class="text-muted mb-5">" Everyone realizes why a new common language would be
+                                    desirable one could refuse to pay expensive translators it would be necessary. "</p>
+                                <h6 class="mb-0 "><i class="fa fa-user p-2 rounded-circle bg-primary mr-2"></i> James
+                                    Athey</h6>
+
+                            </div>
+                            <div class="item">
+                                <p class="text-muted mb-5">" Everyone realizes why a new common language would be
+                                    desirable one could refuse to pay expensive translators it would be necessary. "</p>
+
+                                <h6 class="mb-0"> <i class="fa fa-user p-2 rounded-circle bg-primary mr-2"></i>James
+                                    Athey</h6>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reviews -->
+</div>
+<!-- end row -->
+
+<div class="row  mt-4">
+    <div class="col-xl-9">
+        <div class="card " >
+            <div class="card-body team-card ">
+                <div class="clearfix">
+                    <div class="float-left">
+                        <h4 class="mt-0 header-title mb-4">Team Management</h4>
+
+                    </div>
+                    <div class="float-right">
+                        <button class="btn btn-primary text-dark btn-sm" data-toggle='modal' data-target='#team-Modal'>
+                            Add
+                        </button>
+                    </div>
+                </div>
+                <table id="team" class="display table" width="100%">
+                </table>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3">
+        <div class="card booking-card slimscroll">
+            <div class="card-body">
+                <h4 class="mt-0 header-title mb-4">Bookings</h4>
+                <ol class="activity-feed mb-0 ">
+
+                    <li class="feed-item">
+                        <a href="/admin/shipment/45">
+                            <div class="feed-item-list">
+                                <span class="date">july 22 20</span>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span class="activity-text">Bryan <span class="small">(shipper)</span></span>
+                                    </div>
+                                    <div class="col-6">
+                                        <span class="activity-text">$800 <span class="small">(price)</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                    </li>
+                    <li class="feed-item">
+                        <a href="/admin/shipment/45">
+                            <div class="feed-item-list">
+                                <span class="date">july 22 20</span>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span class="activity-text">Bryan <span class="small">(shipper)</span></span>
+                                    </div>
+                                    <div class="col-6">
+                                        <span class="activity-text">$800 <span class="small">(price)</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                    </li>
+                    <li class="feed-item">
+                        <a href="/admin/shipment/45">
+                            <div class="feed-item-list">
+                                <span class="date">july 22 20</span>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span class="activity-text">Bryan <span class="small">(shipper)</span></span>
+                                    </div>
+                                    <div class="col-6">
+                                        <span class="activity-text">$800 <span class="small">(price)</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                    </li>
+                    <li class="feed-item">
+                        <a href="/admin/shipment/45">
+                            <div class="feed-item-list">
+                                <span class="date">july 22 20</span>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span class="activity-text">Bryan <span class="small">(shipper)</span></span>
+                                    </div>
+                                    <div class="col-6">
+                                        <span class="activity-text">$800 <span class="small">(price)</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                    </li>
+                    <li class="feed-item">
+                        <a href="/admin/shipment/45">
+                            <div class="feed-item-list">
+                                <span class="date">july 22 20</span>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span class="activity-text">Bryan <span class="small">(shipper)</span></span>
+                                    </div>
+                                    <div class="col-6">
+                                        <span class="activity-text">$800 <span class="small">(price)</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                    </li>
+
+                </ol>
+                <div class="text-center">
+                    <a href="#" class="btn btn-primary text-dark">Load More</a>
+                </div>
+            </div>
+        </div>
+
+       
+    </div>
+</div>
+
+<div class="modal fade" id="team-Modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header text-dark bg-primary">
+          <h4 class="modal-title">Team Member </h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" placeholder="Enter Name" id="name">
+              </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" class="form-control" placeholder="Enter Email" id="email">
+              </div>
+              <div class="form-group">
+                <label for="role">Role:</label>
+                <input type="text" class="form-control" placeholder="Enter Role" id="role">
+              </div>
+              <div class="form-group">
+                <label for="salary">Salary:</label>
+                <input type="number" class="form-control" placeholder="Enter Salary" id="salary">
+              </div>
+              
+          </form>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Bid</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+  
+
+<link rel="stylesheet" href="/public/assets/css/admin/dashboard.css">
+<link rel="stylesheet" href="/public/plugins/carousel/crousel.min.css">
+
+<script src="/public/plugins/carousel/carousel.js"></script>
+<script src="/public/assets/js/carousel.js"></script>
+<script src="/public/assets/js/team.js"></script>

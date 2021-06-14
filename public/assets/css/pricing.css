@@ -1,0 +1,36 @@
+.slider {   
+    background-image:linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('../images/gallery/slider-3.jpg');
+    height: 30em;
+    background-size: cover;
+}
+
+.banner {
+    position: absolute;
+    bottom: 0;
+}
+
+.card:hover {
+    transform: scale(1.05,1.05);
+    transition: transform 0.5s;
+}
+
+
+.list-style2 li:before { 
+    margin-left: -20px;
+    margin-right: 10px;
+    content: '';
+    position: absolute;
+    margin-top:8px;
+    width: 8px;
+    height: 8px;
+    background: #F7DC5F;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    z-index: 2;
+    transform: rotate(45deg);
+}
+
+.card {
+    min-height: 30em;
+}

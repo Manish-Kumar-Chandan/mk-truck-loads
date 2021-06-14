@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="512" viewBox="0 0 390 512">
+  <g id="invoice" transform="translate(-61)">
+    <g id="Group_496" data-name="Group 496">
+      <path id="Path_1273" data-name="Path 1273" d="M301,241h90v30H301Z"/>
+      <path id="Path_1274" data-name="Path 1274" d="M166,211a15.017,15.017,0,0,1-15-15H121a45.07,45.07,0,0,0,30,42.419V271h30V238.421A45,45,0,0,0,166,151a15,15,0,1,1,15-15h30a45.069,45.069,0,0,0-30-42.418V61H151V93.582A45,45,0,0,0,166,181a15,15,0,0,1,0,30Z"/>
+      <path id="Path_1275" data-name="Path 1275" d="M451,129.823,322.25,0H61V512H451Zm-120-78.4L400,121H331ZM91,482V30H301V151H421V482Z"/>
+      <path id="Path_1276" data-name="Path 1276" d="M121,301H391v30H121Z"/>
+      <path id="Path_1277" data-name="Path 1277" d="M121,361H391v30H121Z"/>
+      <path id="Path_1278" data-name="Path 1278" d="M121,421H391v30H121Z"/>
+      <path id="Path_1279" data-name="Path 1279" d="M241,241h30v30H241Z"/>
+    </g>
+  </g>
+</svg>

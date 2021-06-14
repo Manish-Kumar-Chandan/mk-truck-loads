@@ -1,0 +1,54 @@
+<% include ../../Partials/HeaderRoot  %>
+<% include ../../Partials/Header %>
+
+    <div class="wrapper-page">
+        <% include ../loder %>
+
+        <div class="card overflow-hidden account-card mx-3 border shadow-lg">
+            <div class="bg-primary p-4 text-white text-center position-relative">
+                <h4 class="font-20 text-dark m-b-5">Register Now to Truck Loads!</h4>
+                <p class="text-dark mb-4">Sign up to continue to Truck Loads.</p>
+                <a class="logo logo-admin"><img src="/public/assets/images/logo-sm.svg" height="26" alt="logo"></a>
+            </div>
+            <div class="account-card-content"> 
+                <div class="mt-5">
+                    <p>New To Truck Loads? <b>Register Free </b></p>
+                    <p>Who Are you?</p>
+                    <a href="/register-carrier" type="button" class="btn btn-primary text-dark">Carrier</a>
+                    <a href="/register-shipper" type="button" class="btn btn-primary text-dark">Shipper</a>
+                <!-- <div id="social" style="display:none;"> -->
+                    <!-- <a href="/auth/facebook" type="button" ><img src ="../../../public/assets/images/fbLogo.jpeg" height="50" width="50"></a> -->
+                    <!-- <a href="/auth/google" type="button" ><img src ="../../../public/assets/images/googleLogo1.png" height="50" width="50"></a> -->
+                <!-- </div> -->
+                    <!-- <input type="button" value="click" onclick="getPriceChgArrow()"> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="m-t-40 text-center">
+            <p>Already have an account ? <a href="/login" class="font-500 text-primary"> Signin now </a> </p>
+        </div>
+
+    </div>
+    <!-- end wrapper-page -->
+
+    <% include ../../Partials/FooterLink  %>
+
+<% include ../../Partials/Footer  %>
+<% include ../../Partials/FooterRoot  %>
+
+
+<!-- <script>
+getPriceChgArrow = function(value) {
+    var x = document.getElementById("social");
+    console.log(x.style.display);
+
+    // arrow_img_name = "";
+    if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+    
+}
+</script> -->

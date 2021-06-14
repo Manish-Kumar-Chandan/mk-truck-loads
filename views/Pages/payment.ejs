@@ -1,0 +1,62 @@
+<% include ../Partials/HeaderRoot  %>
+<% include ../Partials/Header %>
+
+<!-- Begin page -->
+    <div class="ex-pages">
+        <div class="content-center">
+            <div class="content-desc-center">
+                <div class="container">
+                  <!-- <div>
+                    <button type="button" class="btn btn-info btn-lg">Invitation</button>
+                    <button type="button" class="btn btn-primary btn-lg"><a href="/all-cancellation">Cancellation</a>  </button>
+                   </div> -->
+                  <% if(data.length > 0) { %>
+                    
+                        
+                        <h2>All payment</h2>          
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th>Carrier name</th>
+                              <th>Plan </th>
+                              <!-- <th>Date of start</th> -->
+                              <!-- <th>Date of expire </th> -->
+                              <th>Status</th>
+                            </tr>
+                          </thead>
+                          
+                            <% for(let i=0; i<= data.length-1; i++) { %>
+                              <tbody>
+                                <td><%= data[i].userId.firstName %></td>
+                                <td><%= data[i].plan %></td>
+                                <!-- <td><%= data[i].updatedAt %></td> -->
+                                <!-- <td><%= data[i].expiration %></td> -->
+                                
+                                <td><button class="btn btn-primary"><a href="/accept?id=<%= data[i].id %>">Change</a></button>
+                                    <button class="btn btn-danger"><a href="/cancel?id=<%= data[i].id%>">Details</a></button></td>
+                              </tbody>
+                            <% } %>
+                           
+                         
+                        </table>
+                      </div>
+
+                    <% } else { %>
+                     <h1>There no payment</h1>
+                    
+                  <% } %>
+                 
+                <!-- end container -->
+            </div>
+        </div>
+
+    </div>
+    <!-- end error page -->
+    <% include ../Partials/FooterLink  %>
+    <% include ../Partials/Footer  %>
+    <% include ../Partials/FooterRoot  %>
+<script>
+    function call(){
+        console.log("ok")
+    }
+</script>

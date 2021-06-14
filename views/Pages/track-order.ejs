@@ -1,0 +1,207 @@
+<% include ../Partials/HeaderRoot  %>
+<% include ../Partials/Header %>
+
+
+
+<div class="wrapper">
+    <% include ./loder %>
+
+    <% include ./alert %>
+
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center bg-dark icon-container">
+            <div class="w-75 ">
+                <form>
+                    <div class="row" >
+                        <div class="col-12">
+                            <h6>Track An Item</h6>
+                        </div>
+                        <div class="col-12 icon-container bg-white" >
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div class="form-group">
+                                        <input class="form-control " type="text" placeholder="Enter Order Id"></input>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <button class="btn btn-primary h-100 w-100 track" type="button">Track</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>   
+        </div>
+    </div>
+
+    <!-- <div class="row not-map">
+        <div class="col-12 d-flex justify-content-center p-5 ">
+            <i class="fas fa-box-open shadow bg-dark"></i>
+        </div>
+        
+    </div> -->
+
+    <div class="row icon-container">
+        <div class="col-12 mt-5 mb-5">
+            
+            <div class="container ">
+                <div class="mb-4">
+                    <h2 class="text-center">Tracking Status</h2>
+                </div>
+                <div class="row">
+                    <div class="col-2 mb-3 ">
+                        <div class="d-flex justify-content-center ">
+                            <div class="border rounded-circle icon-container shadow bg-primary"> 
+                                
+                                <img class="icons" src="/public/assets/icons/icons/contract-black-icon.svg" >
+                            </div>    
+                        </div>
+                        <div class="text-center mt-2 icon-name">
+                            Order
+                        </div>
+                    </div>
+                    <div class="col-2 mb-3 ">
+                        <div class="d-flex justify-content-center ">
+                            <div class="border rounded-circle icon-container shadow bg-dark"> 
+                                <img class="icons" src="/public/assets/icons/icons/calendar-yellow-icon.svg"  >
+                            </div>    
+                        </div>
+                        <div class="text-center mt-2 icon-name">
+                            Freight
+                        </div>
+                    </div>
+                    <div class="col-2 mb-3 ">
+                        <div class="d-flex justify-content-center ">
+                            <div class="border rounded-circle icon-container shadow bg-dark"> 
+                                <img class="icons" src="/public/assets/icons/icons/delivery-yellow-icon.svg">
+                            </div>    
+                        </div>
+                        <div class="text-center mt-2 icon-name">
+                            Dispatch
+                        </div>
+                    </div>
+                    <div class="col-2 mb-3 ">
+                        <div class="d-flex justify-content-center ">
+                            <div class="border rounded-circle icon-container shadow bg-dark"> 
+                                <img class="icons" src="/public/assets/icons/icons/forklift-yellow-icon.svg"  >
+                            </div>    
+                        </div>
+                        <div class="text-center mt-2 icon-name">
+                            Loading
+                        </div>
+                    </div>
+                    <div class="col-2 mb-3 ">
+                        <div class="d-flex justify-content-center ">
+                            <div class="border rounded-circle icon-container shadow bg-dark"> 
+                                <img class="icons" src="/public/assets/icons/icons/trolley-yellow-icon.svg"  >
+                            </div>    
+                        </div>
+                        <div class="text-center mt-2 icon-name">
+                            Delivery
+                        </div>
+                    </div>
+                    <div class="col-2 mb-3 ">
+                        <div class="d-flex justify-content-center ">
+                            <div class="border rounded-circle icon-container shadow bg-dark"> 
+                                <img class="icons" src="/public/assets/icons/icons/invoice-yellow-icon.svg"  >
+                            </div>    
+                        </div>
+                        <div class="text-center mt-2 icon-name">
+                            Billing
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-12 text-center">
+            <h6>Any items you're tracking will appear here</h6>
+            <p>You'll also see how each item tarcking Live on Map</p>
+        </div>
+        
+    </div>
+
+    <div class="row bg-light">
+        <div class="col-12 p-2">
+            <div class="container p-2">
+                <div class="row">
+                    <div class="col-12">
+                        <h3>Details for Order #1421532151666161</h3>
+                    </div>
+                   
+
+                </div>
+            </div>
+            <div class="container bg-white rounded p-2 shadow">
+                <div class="row p-2">
+                    <div class="col-5">
+                        <div class="font-weight-bolder">Carrier</div>
+                        <div class="font-weight-bolder">Shipper</div>
+                        <div class="font-weight-bolder">Pickup</div>
+                        <div class="font-weight-bolder">Delivery</div>
+                        <div class="font-weight-bolder">Load</div>
+                        <div class="font-weight-bolder">Model</div>
+                        <div class="font-weight-bolder">Body Type</div>
+                        <div class="font-weight-bolder">Registered?</div>
+                        <div class="font-weight-bolder">Registered and Insured?</div>
+                        <div class="font-weight-bolder">Empty?</div>
+                        <div class="font-weight-bolder">Modified?</div>
+                    </div>
+                    <div class="col-7">
+                        <div>Bryan</div>
+                        <div>Peterbilt Transport Co</div>
+                        <div>Sydney</div>
+                        <div>Melbourne</div>
+                        <div>Car</div>
+                        <div>BMW</div>
+                        <div>Fabric</div>
+                        <div>Yes</div>
+                        <div>Yes</div>
+                        <div>Yes</div>
+                        <div>No</div>
+                    </div>
+                    <div class="col-12 mt-2">
+                        <div class="row map">
+                            <script>
+                                var latitude = -33.847927;
+                                var longitude = 150.651786;
+                        
+                                if (latitude === 0 || longitude === 0 ) {
+                                    $('.map').css('height', '0px');
+                                } else {
+                                    $('.map').css('height', '500px');
+                                }
+                            </script>
+                    
+                            <div class="col-12">
+                                <div id="map" ></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+
+    
+</div>
+
+<% include ../Partials/FooterLink  %>
+<% include ../Partials/Footer %>
+<% include ../Partials/FooterRoot  %>
+
+
+<link rel="stylesheet" href="/public/assets/css/track-order.css">
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClAnc__rQnEoH75Zs2sbWKj06tAYlSQus&callback=initMap&libraries=&v=weekly" defer></script>
+<script src="/public/plugins/googlemap/direction-service.js"></script>
+
+<script>
+    jQuery(() => {
+        $('.track').on('click', () => {
+            $('.map').css('height', '500px')
+        })
+    })
+</script>

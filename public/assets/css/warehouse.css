@@ -1,0 +1,43 @@
+.slider {   
+    background-image: url('../images/gallery/warehouse.jpg');
+    height: 30em;
+    background-size: cover;
+}
+
+.banner-container {
+    position: absolute;
+    width: 50%;
+    top: 20%;
+}
+
+.image {
+    height: 400px !important;
+    box-shadow: 0px 3px 40px 0px lightgrey;
+}
+
+
+
+
+.image:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s;
+}
+
+
+
+@media screen and (max-width: 576px) {
+    
+}
+
+@media screen and (max-width: 768px) {
+    .slider {
+        background-image: url('../images/gallery/warehouse-sm.jpg');
+    }
+
+    .banner-container .banner {
+        background-color: #fff;
+    }
+    .banner-container {
+        width: 100%;
+    }
+}

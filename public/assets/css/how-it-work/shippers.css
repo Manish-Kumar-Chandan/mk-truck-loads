@@ -1,0 +1,58 @@
+.slider {   
+    background-image: url('../../images/gallery/slider-1.jpg');
+    height: 40em;
+    background-size: cover;
+}
+
+.banner {
+    position: absolute;
+    bottom: 0;
+}
+
+/* .card:hover {
+    margin-top: -10px;
+    transition: margin-top 1s;
+} */
+
+.wrapper h2, .wrapper h3 {
+    text-shadow: 1.5px 1.5px lightgrey;
+}
+
+.right {
+    float: right;
+}
+
+.company-truck-logo {
+    min-height: 8em !important;
+    min-width: 9em !important;
+}
+
+ul li {
+    list-style: none;
+
+}
+
+.image {
+    height: 400px !important;
+    box-shadow: 0px 3px 40px 0px lightgrey;
+}
+
+
+.image:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s;
+}
+
+
+@media screen and (max-width: 900px) {
+    .slider {
+        height: 25em;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .slider {
+        height: 20em;
+    }
+}

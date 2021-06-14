@@ -1,0 +1,44 @@
+<form id="payment-form">
+    <script>
+        var userId = "<%= userId %>"
+    </script>
+    <div class="row">
+        <div class="col-12">
+
+            <select name="plan" class="custom-select plans">
+                <option disabled selected>Choose your Best Plan</option>
+                <option value="FREE">7 Days/ Free</span></option>
+                <option value="79">1 Month/ 79$</span></option>
+                <option value="250">3 Months/ 250$</span></option>
+                <option value="500">6 Months/ 500$</span></option>
+                <option value="750">12 Months/ 750$</span></option>
+            </select>
+
+
+            <div class="stripe-container mt-3">
+                <div id="card-element">
+                    <!-- Elements will create input elements here -->
+                </div>
+
+                <!-- We'll put the error messages in this element -->
+                <div id="card-errors" role="alert"></div>
+
+            </div>
+
+        </div>
+        <div class="col-12 mt-3 ">
+            <div class="form-check agree">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input terms-condition" value="" name="terms_and_cond">I agree that
+                    Truck Loads is not responsible for the actions of any Buyer(Shipper) OR Seller(Carrier)
+                    participating
+                    on this site.
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+    <button type="submit" id="submit" class="btn btn-primary mt-3 mb-3 subscribe-button" value="button">Subscribe Now</button>
+
+</form>

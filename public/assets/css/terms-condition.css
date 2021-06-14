@@ -1,0 +1,44 @@
+h5 {
+    font-size: 18px !important;
+}
+
+.order-alpha, .order-roman {
+    margin:0 0 1.5em;
+    padding:0;
+    counter-reset:item;
+}
+
+.order-alpha>li {
+    margin:0;
+    padding:0 0 0 4em;
+    text-indent:-2em;
+    list-style-type:none;
+    counter-increment:item;
+}
+
+.order-roman>li {
+    margin:0;
+    padding:0 0 0 4em;
+    text-indent:-2em;
+    list-style-type:none;
+    counter-increment:item;
+}
+
+ 
+.order-alpha>li:before {
+    display:inline-block;
+    width:1.5em;
+    padding-right:0.5em;
+    font-weight:bold;
+    text-align:right;
+    content:"(" counter(item, lower-alpha) ")";
+}
+
+.order-roman>li:before {
+    display:inline-block;
+    width:1.5em;
+    padding-right:0.5em;
+    font-weight:bold;
+    text-align:right;
+    content:"(" counter(item, lower-roman) ")";
+}

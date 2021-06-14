@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="472" height="399.98" viewBox="0 0 472 399.98">
+  <g id="delivery" transform="translate(0 -36.008)">
+    <g id="Group_490" data-name="Group 490">
+      <g id="Group_489" data-name="Group 489">
+        <path id="Path_1266" data-name="Path 1266" d="M464,347.988H448.488l7.44-54.928v-.048l1.136-9.024a56.9,56.9,0,0,0-56.464-64H382.248l-6.488-25.944a8,8,0,0,0-7.76-6.056H335.248l8.68-62.9a8,8,0,0,0-7.928-9.1H189.528a72,72,0,1,0-92.88,60.8l-23.624,171.2H56a8,8,0,0,0-8,8v40a8,8,0,0,0,8,8h64a32,32,0,0,0,64,0H336a32,32,0,0,0,64,0h64a8,8,0,0,0,8-8v-40A8,8,0,0,0,464,347.988Zm-80.936-112H400.6a40.91,40.91,0,0,1,30.662,13.83l0,0a40.944,40.944,0,0,1,9.928,32.152l-.256,2.016H377.064Zm-50.024-32h28.712l4.008,16H330.832Zm33.864,32L360.032,291a8,8,0,0,0,6.946,8.93,8.12,8.12,0,0,0,1.022.062h70.84l-6.5,48H313.184l6.616-48,8.8-64ZM62,107.988a56,56,0,1,1,56,56,56,56,0,0,1-56-56ZM112.376,179.7c1.856.144,3.712.288,5.6.288a72.064,72.064,0,0,0,67.8-48H326.824L304.36,294.828l-7.336,53.16H89.176ZM152,419.988a16,16,0,0,1-16-16h32A16,16,0,0,1,152,419.988Zm216,0a16,16,0,0,1-16-16h32A16,16,0,0,1,368,419.988Zm88-32H64v-24H456Z"/>
+        <rect id="Rectangle_177" data-name="Rectangle 177" width="48" height="16" transform="translate(32 203.988)"/>
+        <rect id="Rectangle_178" data-name="Rectangle 178" width="48" height="16" transform="translate(0 299.988)"/>
+        <rect id="Rectangle_179" data-name="Rectangle 179" width="48" height="16" transform="translate(16 251.988)"/>
+        <path id="Path_1267" data-name="Path 1267" d="M103.854,108.851l28.586-5.143-8.963-58.079,15.2,1.867,9.763,60.493a8,8,0,0,1-3.561,6.657l-32.685,4.881Z" transform="translate(105.104 -46.384) rotate(51)"/>
+        <rect id="Rectangle_180" data-name="Rectangle 180" width="64" height="16" transform="translate(352 315.988)"/>
+        <rect id="Rectangle_181" data-name="Rectangle 181" width="64" height="16" transform="translate(200 315.988)"/>
+        <rect id="Rectangle_182" data-name="Rectangle 182" width="16" height="16" transform="translate(168 315.988)"/>
+        <rect id="Rectangle_183" data-name="Rectangle 183" width="16" height="16" transform="translate(136 315.988)"/>
+      </g>
+    </g>
+  </g>
+</svg>

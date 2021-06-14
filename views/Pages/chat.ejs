@@ -1,0 +1,594 @@
+<% include ../Partials/HeaderRoot  %>
+<% include ../Partials/Header %>
+
+
+
+<div class="wrapper">
+    <% include ./loder %>
+
+    <% include ./alert %>
+
+
+    <div class=" row border">
+        <div class="col-lg-3 left-side-container border h-100 ">
+            <form class="mt-3 p-2 border  border-top-0 border-left-0 border-right-0">
+                <div class="input-group mb-1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-white"><i class="fa fa-search"></i></span>
+                    </div>
+                    <input type="text" class="form-control search-chat" placeholder="Search">
+                </div>
+            </form>
+            <div class="row p-2 h-85">
+                <div class="col-12 h-85  slimscroll">
+                    <ul class="list-group chat-user-lists" style="overflow: auto;">
+                        <% for(let i=0 ; i< chats.length; i++) { %>
+                        <a href="/chat/<%= chats[i]._id %>" class="chat-user mt-1">   
+                        <li class="list-group-item bg-primary text-dark person p-0" id="<%= chats[i]._id %>">
+                            <div class="row">
+                                <span>
+                                    <img src="/public/assets/images/avatar.png" height="20" class="mr-2  rounded-circle ">
+                                </span>
+                                <span>
+                                    <span class="font-weight-bolder chat-user"><%= user.role === 'Carrier' ? chats[i].shipper.firstName   : chats[i].carrier.firstName   %></span>
+                                    <span>
+                                   
+                                    </span><br> 
+                                    <span class="small last-message"><%= chats[i].lastMsg ? (chats[i].lastMsg.length > 10 ? chats[i].lastMsg.slice(0,10) + '...' : chats[i].lastMsg )  : 'No Message'  %></span>
+                                
+                                </span>
+                                
+                            </div>
+                        </li>
+                        </a>
+                       <% } %>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-9 right-side-container ">
+           
+            <% if (!messages) { %>
+                <div class="no-message-container-area ">
+                        <div class="content-center align-self-center" style="height:600px">
+                            <div class="content-desc-center">
+                                <div class="container">
+                                    <div class="card mo-mt-2">
+                                        <div class="card-body">
+                                            <div class="row align-items-center">
+                                                <div class="col-lg-4 offset-lg-1">
+                                                    <div class="ex-page-content">
+                                                        <h4 class="text-dark">Truck Loads</h4>
+                                                        <h6 class="text-dark">Welcome to Truck Loads Chats</h6>
+                                                    </div>
+                                        
+                                                </div>
+                                                <div class="col-lg-5 offset-lg-1">
+                                                    <img src="/public/assets/images/logo.svg" alt="" class="img-fluid mx-auto d-block">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end card -->
+                                </div>
+                                <!-- end container -->
+                            </div>
+                        </div>
+                
+                </div>
+               
+            <% } else { %>
+
+                <div class="message-container-area">
+                    <div class="row p-1 border border-left-0 border-right-0 border-top-0">
+                        <div class="col-8 ">
+                            
+                            <div class="row">
+                                <div class="col-1 col-md-0 ">
+                                    <i class="fa fa-arrow-left"></i> 
+                                </div>
+                                <div class="col-10 col-md-12">
+                                    <h4 style="margin: 0px !important;">
+                                        <span class="username">
+                                            
+                                            <%= user.role === 'Carrier' ? chat.shipper.firstName : chat.carrier.firstName %>
+                                            <% if(user.role === 'Carrier' ) { %>
+                                                <% if (chat.shipper.online) { %>
+                                                    <img height="20" width="30" style="margin-left: -10px" src="/public/assets/icons/green-dot.svg">
+                                                <% } %>
+                                            <% } else { %>
+                                                <% if (chat.carrier.online) { %>
+                                                    <img height="20" width="30" style="margin-left: -10px" src="/public/assets/icons/green-dot.svg">
+                                                <% } %>
+                                            <% } %>   
+                                        </span>
+                                    </h4>
+                                    <p class="small text-capitalize job-decription">
+                                        <% if (chat.job.status !== 'Live' ) { %>
+                                            <span class="<%= chat.job.status === 'In Progress' ? 'text-primary' :  'text-success'     %>">
+                                                ☑
+                                            </span> 
+                                        <% } %> 
+                                        <%= chat.job.title %>
+                                     </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 p-2  pr-3 text-right">
+                            <% if ((chat.job.status ===   'In Progress' ||  chat.job.status ===   'Live')  && user.role === 'Shipper' ) { %>
+                            <div class="dropdown">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-ellipsis-h"></i>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <% if(chat.job.status === 'Live' && user.role === 'Shipper' ) { %>
+                                        <a class="dropdown-item hire-button"  carrier="<%= chat.carrier._id %>" job="<%= chat.job._id %>">Hire</a>
+                                    <%} %>
+                                    <% if(chat.job.status === 'In Progress'  )  {%>
+                                        <% if(job.jobEndBy) { %>
+                                            <% if(job.jobEndBy.toString()  !== user._id.toString()) { %>  
+                                                <a class="dropdown-item" data-toggle="modal" data-target="#jobCompleteModal">
+                                                    End Job
+                                                </a>
+                                        <% } %>
+                                    <% }  else {%>
+                                        <a class="dropdown-item" data-toggle="modal" data-target="#jobCompleteModal">
+                                            End Job
+                                        </a>
+                                    <% } %>
+                                <% } %>
+
+                                </div>
+                            </div>
+                            <% }  else {%>
+                            <% if (job && !job.carrierFeedback) { %>
+                                <% if(job.jobEndBy) { %>
+                                    <% if(job.jobEndBy.toString()  !== user._id.toString()) { %>   
+            
+                                        <div class="dropdown">
+                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                                <i class="fa fa-ellipsis-h"></i>
+                                            </button>
+                                            <div class="dropdown-menu">
+
+                                                    <a class="dropdown-item" data-toggle="modal" data-target="#jobCompleteModal">
+                                                        Send Feedback
+                                                    </a>
+                                            </div>
+                                        </div>
+                                    <% }  %>
+                                <%} %>
+                                <%} %>
+                            <% } %>
+                        </div>
+                    </div>
+        
+                    
+                    <div class="row  ">
+                        <div class="col-12 border  message-container " style="overflow-y: scroll;">
+                            
+                            
+                            <% if (messages) { %>
+
+                                <% if(messages.length > 0) { %>
+                                    <% for(let i=0; i< messages.length; i++) { %>
+
+                                        <% if (user._id.toString() === messages[i].to.toString()) { %>
+                                            <div class="row mb-1">
+                                                <div class="col-md-5 bg-primary col-8 border rounded">
+                                                        <%= messages[i].message %>
+                                                        <span class="time-container" >
+                                                            <%= new Date(messages[i].createdAt).toLocaleTimeString('en-US', { hour12: true, 
+                                                                hour: "numeric", 
+                                                                minute: "numeric"}); %>
+                                                        </span>
+                                                </div>
+                                                <div class="col-md-7 col-4"></div>
+                                            </div>            
+                                        <% } %>
+                                        <% if (user._id.toString() === messages[i].from.toString()) { %>
+                                            <div class="row mb-1">
+                                                <div class="col-md-7 col-4"></div>
+                                                <div class="col-md-5 bg-primary col-8 border rounded">
+                                                    <%= messages[i].message %>
+                                                    <span class="time-container" >
+                                                        <%= new Date(messages[i].createdAt).toLocaleTimeString('en-US', { hour12: true, 
+                                                            hour: "numeric", 
+                                                            minute: "numeric"}); %>
+                                                    </span>
+                                                 </div>
+                                            </div>       
+                                        <% } %>
+                                        
+                                    <% } %>
+                                <% } %>
+                            <% } %>
+                        </div>
+                        <div class="col-12 small typing-container pl-4" style="height: 20px;" >
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="row message-box-container">
+                        <div class="col-12 ">
+                            <form  class="send-message">
+                                <div class="row ">
+                                    
+                                    <div class="col-12">
+                                        <div class="input-group mb-2">
+                                            <input type="text" class="form-control" id="message" placeholder="Message">
+                                            <div class="input-group-append">
+                                              <button type="submit"  class="input-group-text btn btn-primary send-button">Send</button>
+                                            </div>
+                                          </div>
+                                    </div>
+                                </div>
+                            </form>
+        
+                        </div>
+                    </div>
+        
+                    </div>
+            <% } %>
+            
+        </div>
+
+    </div>
+    <!-- The Modal -->
+    <div class="modal fade" id="jobCompleteModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header bg-primary text-dark">
+                    <h4 class="modal-title">End Job</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form class="feedback-form">
+                        <div class="form-group feedback-reason">
+                            <label for="reason">Plese Tell us a Reason</label>
+                            <select name="reason" id="reason" class="custom-select">
+                                <option selected value="completed">Job Is Completed.</option>
+                                <option value="ended">I do not want this job more.</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="ratings">Ratings</label>
+
+                            <span class="user-rating" id="ratings">
+                                <input type="radio" name="rating" value="5"><span class="star"></span>
+
+                                <input type="radio" name="rating" value="4"><span class="star"></span>
+
+                                <input type="radio" name="rating" value="3"><span class="star"></span>
+
+                                <input type="radio" name="rating" value="2"><span class="star"></span>
+
+                                <input type="radio" name="rating" value="1"><span class="star"></span>
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="feedback">Feedback</label>
+                            <textarea id="feedback" name="feedback" rows="8" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary text-dark">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<% include ../Partials/FooterLink  %>
+<% include ../Partials/Footer %>
+<% include ../Partials/FooterRoot  %>
+
+<link rel="stylesheet" href="/public/assets/css/chat.css">
+<script src="/public/assets/js/chat.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/public/assets/css/ratings.css">
+<script>
+    jQuery(() => {
+
+
+        var messageLimit = 20;
+        var ratings = 0;
+        let job = "<%= chat?  chat.job._id: '' %>";
+
+        let role = "<%= user.role %>";
+
+        if (role === 'Carrier') {
+            $('.feedback-reason').hide();
+        }
+        
+        let innerWidth = window.innerWidth;
+        let room = "<%= chat ? chat._id: '' %>"
+
+        $('.message-container').scrollTop($('.message-container')[0].scrollHeight)
+
+        let carrier = "<%= chat?  chat.carrier._id: '' %>"
+        let shipper = "<%= chat ? chat.shipper._id: '' %>"
+
+        let to = "<%= user.role === 'Carrier' ? (chat ?  chat.shipper._id : '') : (chat ? chat.carrier._id : '') %>";
+        let from = "<%= user.role === 'Carrier' ?  (chat ? chat.carrier._id: '') : (chat ? chat.shipper._id : '') %>"
+        
+        var socket = io();
+
+        socket.emit('online', {user: "<%= user._id %>"})
+
+        if(room) {
+            socket.emit('join-room', {
+                room: room
+            })
+        }
+        
+        var unloadEvent = function (e) {
+            socket.emit('disconnected', {'user': "<%= user._id %>"})
+        };
+        window.addEventListener("beforeunload", unloadEvent);
+           
+        socket.on('room-joined', data => {
+            console.log(data)
+        })
+
+
+        socket.on('on-new-message', data => {
+
+            let msg = ``
+
+            if("<%= user._id %>" === data.to.toString()) {
+                msg = `
+                <div class="row mb-1">
+                    <div class="col-md-5 col-8 bg-primary border rounded">
+                            ${data.message }
+                            <span class="time-container" >
+                                ${ new Date().toLocaleTimeString('en-US', { hour12: true, 
+                                    hour: "numeric", 
+                                    minute: "numeric"}) }
+                            </span>
+                    </div>
+                    <div class="col-md-7 col-4"></div>
+                </div> 
+                `
+            } else if("<%= user._id %>" === data.from.toString()) {
+                msg = `
+                <div class="row mb-1">
+                    <div class="col-md-7 col-4"></div>
+
+                    <div class="col-md-5 col-8 bg-primary border rounded">
+                            ${data.message }
+                            <span class="time-container" >
+                                ${ new Date().toLocaleTimeString('en-US', { hour12: true, 
+                                    hour: "numeric", 
+                                    minute: "numeric"}) }
+                            </span>
+
+                    </div>
+                </div> 
+                `
+            }
+            
+            
+            $('.message-container').append(msg);
+            $('.message-container').scrollTop($('.message-container')[0].scrollHeight)
+        })
+
+        $('#message').on('keyup', (e) => {
+            socket.emit('typing', {
+                room: room
+            })
+        })
+
+        $('.message-container').on('scroll', (e) => {
+            if (e.target.scrollTop === 0) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/get-rest-messages',
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    data: {
+                        chatId: room,
+                        skip: messageLimit
+                    }
+
+                }).done((response) => {
+                   messageLimit = messageLimit + 20;
+
+                    $('.message-container').scrollTop(1)
+                
+                   let data = response.data
+                   for (let i=0 ; i< data.length ; i++) {
+                    if("<%= user._id %>" === data[i].to.toString()) {
+                        msg = `
+                        <div class="row mb-1">
+                            <div class="col-md-5 col-8 bg-primary border rounded">
+                                    ${data[i].message }
+                                    <span class="time-container" >
+                                        ${ new Date(data[i].createdAt).toLocaleTimeString('en-US', { hour12: true, 
+                                            hour: "numeric", 
+                                            minute: "numeric"}) }
+                                    </span>
+
+                            </div>
+                            <div class="col-md-7 col-4"></div>
+                        </div> 
+                        `
+                    } else if("<%= user._id %>" === data[i].from.toString()) {
+                        msg = `
+                        <div class="row mb-1">
+                            <div class="col-md-7 col-4"></div>
+
+                            <div class="col-md-5 col-8 bg-primary border rounded">
+                                    ${data[i].message }
+                                    <span class="time-container" >
+                                        ${ new Date(data[i].createdAt).toLocaleTimeString('en-US', { hour12: true, 
+                                            hour: "numeric", 
+                                            minute: "numeric"}) }
+                                    </span>
+
+                            </div>
+                        </div> 
+                        `
+                    }
+                    
+                    
+                    $('.message-container').prepend(msg);
+                   }
+
+
+                }).fail((err) => {
+                    let response = (err.responseJSON)
+                    console.log(response)
+                    alert('Something Went Wrong!')
+                })
+            }
+        })
+
+        socket.on('on-typing', () => {
+            $('.typing-container').text('typing...')
+            setTimeout(() => {
+                $('.typing-container').text('');
+            }, 200)
+        })
+
+
+        $('.send-message').on('submit', (e) => {
+            e.preventDefault()
+            let message = $('#message');
+
+            if (message.val().trim()) {
+                socket.emit('new-message', {
+                    message: message.val(),
+                    to: to,
+                    from: from,
+                    room: room
+                })
+
+                message.val('')
+            }
+            
+        })
+
+
+        let open = "<%= open %>"
+        
+        $('.fa-arrow-left').on('click', () => {
+                window.location.href = '/chat'
+        })
+        
+        if (innerWidth < 991) {
+
+            if (open === "true") {
+                $('.left-side-container').hide();
+                $('.right-side-container').show();
+                $('.right-side-container').css('position', 'relative');
+
+            } else {
+                $('.left-side-container').show();
+                $('.right-side-container').hide();
+            }
+
+            $(".person").click(function () {
+                var index = $(".person").index(this);
+                $('.left-side-container').hide();
+                $('.right-side-container').show();
+                $('.right-side-container').css('position', 'relative');
+            });
+           
+        }
+
+
+        $('.hire-button').on('click', function()  {
+            let carrier = $(this).attr('carrier');
+            let job = $(this).attr('job');
+
+            $.ajax({
+                    type: 'POST',
+                    url: '/assign-job',
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    data: {
+                        carrier: carrier,
+                        job: job
+                    }
+
+                }).done((response) => {
+                  
+                   window.location.reload();
+                }).fail((err) => {
+                    let response = (err.responseJSON)
+                    console.log(response)
+                    alert('Something Went Wrong!')
+                })
+
+        })
+
+        $('.search-chat').on('keyup', function(e) {
+            let value = e.target.value;
+
+            $(".chat-user-lists li ").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+
+        })
+
+
+
+        $('.feedback-form').on('submit', function(e) {
+            e.preventDefault();
+
+            
+            let reason = $('#reason').val().trim();
+            let feedback = $('#feedback').val();
+            let stars = $('[name="rating"]:checked').val();
+
+            if(reason === '' && stars === 0) {
+                return alert('please fill form correctly!')
+            }
+            
+            $.ajax({
+                    type: 'POST',
+                    url: '/end-job',
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    data: {
+                        job,
+                        reason,
+                        stars,
+                        feedback
+                    }
+
+                }).done((response) => {
+                  
+                    if (role === 'Shipper') {
+                        socket.emit('new-message', {
+                            message: 'Job is closed by ' + response.user ,
+                            to: to,
+                            from: from,
+                            room: room
+                        })
+                    }
+                    
+                   window.location.reload();
+                }).fail((err) => {
+                    let response = (err.responseJSON.msg)
+                    
+                    alert(response)
+                    
+                })
+
+
+        })
+    })
+</script>

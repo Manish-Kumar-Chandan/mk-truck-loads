@@ -1,0 +1,91 @@
+<div class="row p-3">
+    <div class="col-md-6">
+        <div id="map" ></div>
+    </div>
+    <div class="col-md-6 details-container">
+        <h5>Details</h5>
+        <div class="clearfix">
+            <span class="float-left">
+                <img src="<%= quote.image %>" height="100"  width="100">
+            </span>
+        </div>
+        <div class="clearfix">
+            <span class="float-left">Title:</span>
+            <span class="float-right"><%= quote.title %></span>
+        </div>
+        <div class="clearfix">
+            <span class="float-left">Pickup:</span>
+            <span class="float-right"><%= quote.pickup %></span>
+        </div>
+        <div class="clearfix">
+            <span class="float-left">Delivery:</span>
+            <span class="float-right"><%= quote.deliver %></span>
+        </div>
+        <div class="clearfix">
+            <span class="float-left">Avalibility:</span>
+            <span class="float-right"><%= quote.availibility %></span>
+        </div>
+        <% if(quote.date) { %>
+        <div class="clearfix">
+            <span class="float-left">Date:</span>
+            <span class="float-right"><%= quote.date %></span>
+        </div>
+        <%} %>
+        <div class="clearfix">
+            <span class="float-left">Length:</span>
+            <span class="float-right"><%= quote.length %> (mm)</span>
+        </div>
+        <div class="clearfix">
+            <span class="float-left">Width:</span>
+            <span class="float-right"><%= quote.width %> (mm)</span>
+        </div>
+        <div class="clearfix">
+            <span class="float-left">Height</span>
+            <span class="float-right"><%= quote.height %> (mm)</span>
+        </div>
+        <div class="clearfix">
+            <span class="float-left">Weight</span>
+            <span class="float-right"><%= quote.weight %> (mm)</span>
+        </div>
+        <div class="clearfix">
+            <span class="float-left">Budget</span>
+            <span class="float-right text-danger"><%= quote.budget %> $</span>
+        </div>
+        <div class="clearfix">
+            <span class="float-left">Status</span>
+            <span class="float-right text-warning"><%= quote.status %></span>
+        </div>
+       <div class="row">
+            <div class="col-12">
+                Description
+            </div>
+            <div class="col-12">
+                <%= quote.description %>
+            </div>
+       </div>
+    </div>
+</div>
+<script>
+    var pickupLocations = {
+        "lat": +"<%= quote.pickupLocations.lat %>",
+        "lng": +"<%= quote.pickupLocations.lng %>"
+    } 
+
+    var deliverLocations = {
+        "lat": +"<%= quote.deliverLocations.lat %>",
+        "lng": +"<%= quote.deliverLocations.lng %>"
+    }
+</script>
+<style>
+
+    .details-container .float-left, .details-container .float-right {
+        width: 50%;
+    }
+
+    #map {
+        height: 300px;
+        width: 100%;
+    }
+</style>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClAnc__rQnEoH75Zs2sbWKj06tAYlSQus&callback=initMap&libraries=&v=weekly" defer></script>
+<script src="/public/plugins/googlemap/direction-service.js"></script>

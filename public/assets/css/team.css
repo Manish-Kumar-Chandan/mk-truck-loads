@@ -1,0 +1,37 @@
+.img-container {
+    height: 160px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.details-container {
+    height: 80px;
+}
+
+.img-container:hover img{
+    transition: transform 0.5s;
+    transform:scale(1.09)
+}
+
+
+.link {
+    border: 1px solid;
+    color: #F7DC5F;
+    background-color: #03060D;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 991px) {
+    .img-container {
+        width: 200px;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .cont {
+        margin-top: 2em;
+    }
+}
